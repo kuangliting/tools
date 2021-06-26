@@ -1,0 +1,449 @@
+body {
+  font-size: 13px;
+}
+
+.dumu-page-title {
+  font-size: 18px;
+  margin: 20px 3px 20px;
+  position: relative;
+  top: 6px;
+}
+
+.dumu-full-table {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.el-table {
+  th {
+    background-color: #f6f8ff;
+  }
+}
+
+.dumu-table {
+  border: 1px solid #dfe6ec;
+  border-bottom: none;
+}
+
+.sys-cell-container {
+  .title {
+    font-size: 18px;
+    margin: 20px 3px 20px;
+  }
+
+  .sys-cell-table {
+    border: 1px solid #dfe6ec;
+    border-bottom: none;
+  }
+
+  .sys-cell-main {
+    background: #fff;
+    border: 1px solid #e8e7ed;
+    border-radius: 2px;
+    padding: 24px;
+  }
+}
+
+.el-form {
+  .el-input.el-input--small:not(.sp) {
+    width: 200px !important;
+  }
+
+
+
+  .el-input-number {
+    .el-input.el-input--small {
+      width: 130px !important;
+    }
+  }
+}
+
+.el-table {
+  th {
+    background-color: #f6f8ff;
+  }
+}
+
+.el-date-editor--datetimerange.el-input__inner {
+  width: 350px;
+}
+
+.dumu-form-footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  // border-top: 1px solid #ddd;
+
+  box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+
+  .el-button {
+    margin: 14px;
+    border-radius: 0;
+    width: 110px;
+  }
+
+  // .el-button+.el-button {
+  //   margin-left: 28px;
+  // }
+}
+
+.dumu-page {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  overflow: hidden;
+
+  .dumu-page-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    padding: 30px 0 0 5px;
+  }
+
+  .dumu-page-title+.dumu-page-scorll {
+    height: calc(100% - 49px);
+  }
+
+  .dumu-page-scorll {
+    height: calc(100% + 11px);
+  }
+}
+
+.dumu-drawer-wrap {
+  border: 0px solid red;
+  margin: 0 auto;
+
+  .dumu-drawer-title {
+    line-height: 35px;
+    font-size: 18px;
+    color: #292932;
+    padding: 10px 24px;
+    position: relative;
+    border: 0px solid green;
+    margin-bottom: 36px;
+  }
+
+  .dumu-drawer-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 18px;
+    border: 0px solid red;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+      transform: scale(1.2);
+    }
+  }
+
+  .dumu-drawer-image {
+    width: 192px;
+    height: 192px;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .dumu-drawer-form {
+    width: 380px;
+    margin: 0 auto;
+  }
+}
+
+
+.dumu-full-page {
+  margin: 0 10px;
+  //   border:2px solid red;
+  height: 100%;
+
+  .dumu-full-page-w {
+    padding: 20px 20px 10px 20px;
+    background: #fff;
+  }
+
+  .dumu-search-module {
+    border: 0px solid red;
+    position: relative;
+    margin-bottom: 10px;
+
+    .el-form-item--small.el-form-item {
+      margin-bottom: 0;
+    }
+
+    // .el-date-editor,.el-select{
+    //   margin-right:16px;
+    // }
+  }
+
+  .el-table-column--selection .cell {
+    padding-left: 30px;
+  }
+
+  .el-table__body-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    color: #ebeef5;
+  }
+
+  .el-table__body-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    height: 10px;
+    background: #e0e0e0;
+  }
+}
+
+
+.local-danger-btn {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid rgba(255, 73, 73, 0.5);
+  border-radius: 4px;
+  color: #ff4949;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 0;
+  background-color: #fff;
+  outline: none;
+
+  &:focus {
+    background-color: rgba(255, 73, 73, 0.1);
+    border: 1px solid rgba(255, 73, 73, 0.5);
+  }
+
+  &:hover {
+    background-color: rgba(255, 73, 73, 0.1);
+    border: 1px solid rgba(255, 73, 73, 0.5);
+  }
+
+  &:active {
+    background-color: rgba(255, 73, 73, 0.2);
+    border: 1px solid #ff4949;
+    color: red;
+  }
+
+  &.footer-inner {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+}
+
+.el-table__fixed-right-patch {
+  background-color: transparent;
+}
+
+
+
+
+.page-select-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  color: #292929;
+  border-radius: 17px;
+  font-size: 13px;
+  cursor: pointer;
+
+  &+.page-select-btn {
+    margin-left: 26px;
+  }
+
+  &:hover {
+    background: #F3F3F4;
+  }
+
+  &.selected {
+    background: #007aff;
+    color: #fff;
+  }
+}
+
+.dumu-update-dialog {
+
+  // .el-dialog__header{
+  //   padding:14px;
+  // }
+  .el-dialog__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .el-dialog__footer {
+    text-align: center;
+
+    .el-button+.el-button {
+      margin-left: 30px;
+    }
+  }
+}
+
+.task-status {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #47CC74;
+  margin-right: 6px;
+  transform: translateY(-1px);
+
+  &.forbid {
+    background-color: #FF8519;
+  }
+}
+
+// 首页与抓拍详情弹框 begin
+.video-dlg-detail {
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  .el-dialog__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .el-dialog__body {
+    padding: 0 20px 30px;
+  }
+
+  .detail-container {
+    text-align: center;
+  }
+
+  .img-wrap {
+    // background: #aaa;
+    border-radius: 3px;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 10px;
+  }
+
+  .d-line {
+    line-height: 23px;
+  }
+}
+
+.comp-d {
+  display: flex;
+  position: relative;
+  font-size: 13px;
+
+  .d-line>span {
+    margin-right: 10px;
+  }
+
+  .detail-pk-mode {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 50%;
+    top: 25%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .detail-pk-title {
+    color: #47cc74;
+    line-height: 40px;
+    font-size: 14px;
+  }
+
+  .detail-pk-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    background-color: #47cc74;
+    font-size: 18px;
+    margin: 0 auto;
+  }
+
+  .detail-container {
+
+    //  border:1px solid red;
+    .img-wrap {
+      width: 105px;
+      height: 105px;
+    }
+  }
+
+  .img-name {
+    font-size: 12px;
+    color: #888;
+    display: block;
+    margin-bottom: 12px;
+    margin-top: -3px;
+  }
+
+  .detail-container {
+    flex: 1;
+  }
+}
+
+// 首页与抓拍详情弹框 end 
+
+.form-msg-tip {
+  font-size: 12px;
+  color: #999;
+  position: absolute;
+  width: 160px;
+  text-align: left;
+  padding-left: 16px;
+  border: 0px solid red;
+
+  .el-icon-question {
+    font-size: 15px;
+    color: #bbb;
+    transform: translateY(1px);
+    cursor: pointer;
+  }
+}
+
+
+.option-libtype-txt {
+  margin-left: 5px;
+  font-size: 10px;
+  padding: 3px;
+  color: #1890ff;
+  background: rgba(24, 144, 255, 0.1);
+  border-radius: 3px;
+  transform: scale(0.8);
+  &.is-black {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+.dumu-part-tip {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align: left;
+  color: #cc961f;
+}
+
+.dumu-page{
+
+}

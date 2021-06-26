@@ -1,0 +1,142 @@
+
+
+.du-video-wrap {
+  // display: flex;
+  // flex-direction: column;
+  font-size: 13px;
+
+  .du-video-box {
+    // border:2px solid red;
+    // flex: 1;
+    // height: calc(100% - 56px);
+    text-align: center;
+    position: fixed;
+    left: 214px;
+    right: 294px;
+    top: 110px;
+    bottom: 150px;
+    top: 70px;
+    bottom: 0px;
+    z-index: 1100;
+    // border: 1px solid red;
+    transition: all 0.5s;
+
+    &.isFullscreen {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1200;
+      transform: translate(-0px, -0px);
+      background: #000;
+    }
+
+    &::before {
+      display: inline-block;
+      height: 100%;
+      content: "";
+      width: 0;
+      vertical-align: middle;
+    }
+  }
+
+  .v-one {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+
+    .video {
+      display: inline-block;
+    }
+  }
+}
+
+.du-video-box {
+  position: relative;
+  border: 0px solid green;
+
+  .record-layer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .du-vd-item {
+    border: 0px solid red;
+    display: flex;
+    margin: 10px 0;
+    padding-right: 10px;
+  }
+
+  .du-vd-label {
+    color: #bbb;
+    width: 70px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: -10px;
+  }
+
+  .du-vd-slider {
+    flex: 1;
+  }
+
+  .du-video-control {
+    position: absolute;
+    right: -288px;
+    top: 0px;
+    width: 288px;
+    bottom: 0px;
+    border: 0px solid red;
+    background: #202025;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+  }
+}
+
+.full-video-area {
+  .video-area-icon {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px;
+    font-size: 25px;
+  }
+}
+
+.full-video-area,
+.a-video-area {
+  &:hover {
+    .video-area-icon {
+      opacity: 1;
+    }
+  }
+}
+
+.video-area-icon {
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  // background: #fff;
+  // width: 50px;
+  // height: 50px;
+  padding: 8px;
+  text-align: center;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.35s;
+  color: rgba(255, 255, 255, 0.35);
+  opacity: 0;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
