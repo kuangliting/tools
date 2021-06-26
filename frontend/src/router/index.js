@@ -117,7 +117,6 @@ export let constantRoutes = [{
   {
     path: '/code-elements',
     component: Layout,
-
     meta: {
       title: '代码单元',
       icon: 'el-icon-menu',

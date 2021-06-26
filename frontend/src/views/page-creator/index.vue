@@ -1,6 +1,9 @@
 <template>
   <div class="dumu-full-page">
-    <div class="dumu-page-title">{{ this.$route.meta.title }}</div>
+    <div class="dumu-page-title">
+      {{ this.$route.meta.title }}
+      <el-button type="primary" class="title-right-btn" icon="el-icon-plus" size="small">添加页面</el-button>
+    </div>
     <div class="dumu-full-page-w">
       <el-table
         ref="multipleTable"
@@ -21,10 +24,23 @@
         </el-table-column>
         <el-table-column prop="routerName" label="路径" width="120">
         </el-table-column>
+        <el-table-column label="操作" width="110px">
+          <template slot-scope="scope">
+            <el-button @click="edit(scope.row)" type="text" size="small">
+                编辑</el-button>
+          </template>
+        </el-table-column>
       </el-table>
     </div>
   </div>
 </template>
+<style lang="scss">
+.title-right-btn {
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+</style>
 <script>
 export default {
   data() {
@@ -36,7 +52,6 @@ export default {
           name: "王小虎",
           address: "上海市普陀区金沙江路 1518 弄",
         },
-        
       ],
       multipleSelection: [],
     };
