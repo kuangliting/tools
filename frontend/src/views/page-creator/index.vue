@@ -2,7 +2,13 @@
   <div class="dumu-full-page">
     <div class="dumu-page-title">
       {{ this.$route.meta.title }}
-      <el-button type="primary" class="title-right-btn" icon="el-icon-plus" size="small">添加页面</el-button>
+      <el-button
+        type="primary"
+        class="title-right-btn"
+        icon="el-icon-plus"
+        size="small"
+        >添加页面</el-button
+      >
     </div>
     <div class="dumu-full-page-w">
       <el-table
@@ -27,7 +33,8 @@
         <el-table-column label="操作" width="110px">
           <template slot-scope="scope">
             <el-button @click="edit(scope.row)" type="text" size="small">
-                编辑</el-button>
+              编辑</el-button
+            >
           </template>
         </el-table-column>
       </el-table>
