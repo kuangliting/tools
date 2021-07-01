@@ -1,39 +1,41 @@
 const fs = require("fs");
-const fs2 = require("fs-extra");
 const path = require("path");
-const entryConfig = require("./config");
-const {
-  sourceDir,
-  actionProtoFile,
-  distProtoDir
-} = entryConfig;
-const baseUrl = path.resolve(sourceDir, './protobuf');
-//const dumuUrl = path.resolve(__dirname, '../protobuf-dumu/protobuf');
+const entryConfig = require("./enum-creator/config");
+const {sourceDir,}=entryConfig
+const baseUrl = path.resolve(__dirname, '../protobuf');
+const dumuUrl = path.resolve(__dirname, '../protobuf-dumu/protobuf');
 //let dumuulist = ["common/dumu_common.proto", "config/dumu_saas_config.proto", "action/dumu_saas_action.proto", "dumu_service/status/dumu_service_status.proto"];
-//dumuulist = [];
+dumuulist=[];
 //const index = 'web/web.proto';
 //let index = "web/action/dumu_web_action.proto";
 //let dist = "../z-build/action2.js";
-let config = {
-  distDir:path.resolve(__dirname, '../dist'),
-  dist: path.resolve(__dirname, '../dist/action.js'),
-  entry: {
-    action: {
-      index: path.resolve(sourceDir, './protobuf/web/action/dumu_web_action.proto'),
-    },
 
+let config = {
+  dist: "../z-build/proto",
+  entry: {
+    // common: {
+    //   index: "common/dumu_common.proto",
+    // },
+    // config: {
+    //   index: "config/dumu_config.proto",
+    // },
+    action: {
+      index: "web/action/dumu_web_action.proto",
+      //index: "config/dumu_config_action.proto",
+    },
+    // info: {
+    //   index: "web/status/dumu_web_info.proto",
+    // }
   },
 }
 
-function run(index, distUrl) {
+function run(index, dist) {
   let sumMessage = 0;
   let buildMap = {};
   let globalObj = {};
   let parentMap = {};
-  if (fs.existsSync(distUrl)) {
-    fs.writeFileSync(distUrl, '')
-  }  
-
+  let distUrl = path.resolve(baseUrl, dist);
+  fs.writeFileSync(distUrl, '')
   const originalType = ['uint32', 'int32', 'float', 'string', 'bool'];
 
   function url2name(url) {
@@ -54,6 +56,7 @@ function run(index, distUrl) {
     //     encoding: 'utf-8'
     //   });
     // } else {
+     
     // }
     result = fs.readFileSync(path.resolve(baseUrl, url), {
       encoding: 'utf-8'
@@ -86,13 +89,18 @@ function run(index, distUrl) {
 
     })
     //console.log(result);
+
+
     const innerRexp = /\{([\n\s]*?enum.+\{[\n\s\S]*?\})/g;
+
+
     result = result.replace(innerRexp, function (a, b, c) {
       return "";
     })
 
     //console.log(result);
     //console.log(result);
+
     var patt = /(.+)\n?/mg;
     var r = "";
     let count = 0;
@@ -104,6 +112,7 @@ function run(index, distUrl) {
     //   console.log("-------------------------------");
     //   count++; 
     // }
+
     //console.log(count);
 
     result.replace(/message (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
@@ -159,13 +168,13 @@ function run(index, distUrl) {
             propObj[propName] = {
               type,
               desc,
-              isArray: true
+              isArray:true
             }
           } else {
             propObj[propName] = {
               type,
               desc,
-              isArray: false
+              isArray:false
             }
           }
         }
@@ -185,26 +194,25 @@ function run(index, distUrl) {
       build(m);
     });
     buildMap[url] = true;
+
   }
   build(index);
+
   //console.log("Object.keys(globalObj).length===sumMessage", Object.keys(globalObj).length, sumMessage);
+
   let bf = `export default `
   fs.appendFileSync(distUrl, bf + JSON.stringify(globalObj) + ";");
+
   //return build;
 }
 
-let distPath = config.dist; //path.resolve(baseUrl, config.dist);
+let distPath = path.resolve(baseUrl, config.dist);
 
-if (!fs.existsSync(config.distDir)) {
-  fs.mkdirSync(config.distDir)
+if (!fs.existsSync(distPath)) {
+  fs.mkdirSync(distPath)
 }
 Object.keys(config.entry).forEach(d => {
- let obj = config.entry[d];
- // let dist = `${config.dist}/${d}.js`;
-  run(obj.index, distPath);
+  let obj = config.entry[d];
+  let dist = `${config.dist}/${d}.js`;
+  run(obj.index, dist);
 })
-
-fs2.copySync(path.resolve(__dirname,"../dist/action.js"),path.resolve(__dirname,distProtoDir,"action.js"));
-
-
- 

@@ -6,7 +6,7 @@ const chalk = require('chalk')
 const semver = require('semver')
 //const currentVersion = require('../package.json').version;
 
-const config = require("./config");
+const config = require("../config");
 const creator = require("./create");
 const {
     sourceDir,

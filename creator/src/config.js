@@ -8,5 +8,7 @@ module.exports = {
             isAll:true,
         }
     ],
-    
+    actionProtoFile:"",
+    distProtoDir:"C:/code/capture_web/src/views/create-code/proto",
+    //actionProtoFile:""
 }
