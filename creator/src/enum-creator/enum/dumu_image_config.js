@@ -32,10 +32,10 @@ export const WhiteBalanceMode={
 
       };
 export const WhiteBalanceModeMap={
-        [WhiteBalanceMode.AUTO_WHITE_BALANCE]:'自动白平衡',[WhiteBalanceMode.AUTO_WHTIE_BALANCE_FIXED_SENCE]:'场景固定模式',[WhiteBalanceMode.MANUAL_WHITE_BALANCE_CLOUDY]:'阴天多云(7000K)',[WhiteBalanceMode.MANUAL_WHITE_BALANCE_SUNLIGHT]:'白天阳光(5000K)',[WhiteBalanceMode.MANUAL_WHITE_BALANCE_FLUORESCENT]:'白光灯(4000K)',[WhiteBalanceMode.MANUAL_WHITE_BALANCE_INCANDESCENT]:'钨丝灯(2500K)'
+        
       };
 export const WhiteBalanceModeList=[
-        {label:'自动白平衡',value:WhiteBalanceMode.AUTO_WHITE_BALANCE},{label:'场景固定模式',value:WhiteBalanceMode.AUTO_WHTIE_BALANCE_FIXED_SENCE},{label:'阴天多云(7000K)',value:WhiteBalanceMode.MANUAL_WHITE_BALANCE_CLOUDY},{label:'白天阳光(5000K)',value:WhiteBalanceMode.MANUAL_WHITE_BALANCE_SUNLIGHT},{label:'白光灯(4000K)',value:WhiteBalanceMode.MANUAL_WHITE_BALANCE_FLUORESCENT},{label:'钨丝灯(2500K)',value:WhiteBalanceMode.MANUAL_WHITE_BALANCE_INCANDESCENT}
+        
       ];
 export const BackLightCompensation={
           BACK_LIGHT_COMP_MODE_OFF:0
@@ -43,10 +43,10 @@ export const BackLightCompensation={
 
       };
 export const BackLightCompensationMap={
-        [BackLightCompensation.BACK_LIGHT_COMP_MODE_OFF]:'背光补偿关',[BackLightCompensation.BACK_LIGHT_COMP_MODE_ON]:'背光补偿开'
+        
       };
 export const BackLightCompensationList=[
-        {label:'背光补偿关',value:BackLightCompensation.BACK_LIGHT_COMP_MODE_OFF},{label:'背光补偿开',value:BackLightCompensation.BACK_LIGHT_COMP_MODE_ON}
+        
       ];
 export const DeFogMode={
           DE_FOG_MODE_OFF:0
@@ -54,10 +54,10 @@ export const DeFogMode={
 
       };
 export const DeFogModeMap={
-        [DeFogMode.DE_FOG_MODE_OFF]:'去雾关',[DeFogMode.DE_FOG_MODE_ON]:'去雾开'
+        
       };
 export const DeFogModeList=[
-        {label:'去雾关',value:DeFogMode.DE_FOG_MODE_OFF},{label:'去雾开',value:DeFogMode.DE_FOG_MODE_ON}
+        
       ];
 export const HDRMode={
           HDR_MODE_OFF:0
@@ -65,10 +65,10 @@ export const HDRMode={
 
       };
 export const HDRModeMap={
-        [HDRMode.HDR_MODE_OFF]:'HDR关',[HDRMode.HDR_MODE_ON]:'HDR开'
+        
       };
 export const HDRModeList=[
-        {label:'HDR关',value:HDRMode.HDR_MODE_OFF},{label:'HDR开',value:HDRMode.HDR_MODE_ON}
+        
       ];
 export const StrongLightSurpression={
           STRONG_LIGHT_SURPRESSION_OFF:0
@@ -76,8 +76,8 @@ export const StrongLightSurpression={
 
       };
 export const StrongLightSurpressionMap={
-        [StrongLightSurpression.STRONG_LIGHT_SURPRESSION_OFF]:'强光抑制关',[StrongLightSurpression.STRONG_LIGHT_SURPRESSION_ON]:'强光抑制开'
+        
       };
 export const StrongLightSurpressionList=[
-        {label:'强光抑制关',value:StrongLightSurpression.STRONG_LIGHT_SURPRESSION_OFF},{label:'强光抑制开',value:StrongLightSurpression.STRONG_LIGHT_SURPRESSION_ON}
+        
       ];

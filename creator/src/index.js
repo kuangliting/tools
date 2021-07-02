@@ -207,4 +207,6 @@ Object.keys(config.entry).forEach(d => {
 fs2.copySync(path.resolve(__dirname,"../dist/action.js"),path.resolve(__dirname,distProtoDir,"action.js"));
 
 
+
+
  
