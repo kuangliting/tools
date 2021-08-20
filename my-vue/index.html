@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        let myobj = {
+            name: "klting",
+            age: 100,
+            address: "深圳",
+        }
+
+        // Object.defineProperty()
+
+    
+
+
+        function MyVue(config) {
+            if (!(this instanceof MyVue)) {
+                throw {error:"this must be constructor"}
+            }
+            if(config.data){
+                
+            }
+        }
+        try {
+            let obj =  MyVue({
+                data: myobj
+            });
+            console.log(obj)
+        }catch(e){
+            console.log(e)
+        }
+    </script>
+</body>
+
+</html>
