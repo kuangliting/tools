@@ -59,16 +59,16 @@ export const ConfigHeartBeatPushResultCodeMap={
 export const ConfigHeartBeatPushResultCodeList=[
         
       ];
-export const ConfigRegisterPushResultCode={
-          CONFIG_REGISTER_PUSH_RESULT_CODE_NONE:0
-,CONFIG_REGISTER_PUSH_RESULT_CODE_OK:1
-,CONFIG_REGISTER_PUSH_ERROR_FAILED:-100
+export const GetHeartBeatPushResultCode={
+          GET_HEART_BEAT_PUSH_RESULT_CODE_NONE:0
+,GET_HEART_BEAT_PUSH_RESULT_CODE_OK:1
+,GET_HEART_BEAT_PUSH_ERROR_FAILED:-100
 
       };
-export const ConfigRegisterPushResultCodeMap={
+export const GetHeartBeatPushResultCodeMap={
         
       };
-export const ConfigRegisterPushResultCodeList=[
+export const GetHeartBeatPushResultCodeList=[
         
       ];
 export const ConfigDeviceParamResultCode={
@@ -95,6 +95,18 @@ export const MultiMediaVideoInfoResultCodeMap={
 export const MultiMediaVideoInfoResultCodeList=[
         
       ];
+export const MultiMediaVideoInfoResultCode={
+          MULTIMEDIA_VIDEO_RESULT_CODE_NONE:0
+,MULTIMEDIA_VIDEO_RESULT_CODE_OK:1
+,MULTIMEDIA_VIDEO_ERROR_FAILED:-100
+
+      };
+export const MultiMediaVideoInfoResultCodeMap={
+        
+      };
+export const MultiMediaVideoInfoResultCodeList=[
+        
+      ];
 export const MultiMediaAudioInfoResultCode={
           MULTIMEDIA_AUDIO_RESULT_CODE_NONE:0
 ,MULTIMEDIA_AUDIO_RESULT_CODE_OK:1
@@ -105,6 +117,30 @@ export const MultiMediaAudioInfoResultCodeMap={
         
       };
 export const MultiMediaAudioInfoResultCodeList=[
+        
+      ];
+export const MultiMediaAudioInfoResultCode={
+          MULTIMEDIA_AUDIO_RESULT_CODE_NONE:0
+,MULTIMEDIA_AUDIO_RESULT_CODE_OK:1
+,MULTIMEDIA_AUDIO_ERROR_FAILED:-100
+
+      };
+export const MultiMediaAudioInfoResultCodeMap={
+        
+      };
+export const MultiMediaAudioInfoResultCodeList=[
+        
+      ];
+export const MultiMediaOsdInfoResultCode={
+          MULTIMEDIA_OSD_RESULT_CODE_NONE:0
+,MULTIMEDIA_OSD_RESULT_CODE_OK:1
+,MULTIMEDIA_OSD_ERROR_FAILED:-100
+
+      };
+export const MultiMediaOsdInfoResultCodeMap={
+        
+      };
+export const MultiMediaOsdInfoResultCodeList=[
         
       ];
 export const MultiMediaOsdInfoResultCode={
@@ -131,6 +167,18 @@ export const MultiMediaRoiInfoResultCodeMap={
 export const MultiMediaRoiInfoResultCodeList=[
         
       ];
+export const MultiMediaRoiInfoResultCode={
+          MULTIMEDIA_ROI_RESULT_CODE_NONE:0
+,MULTIMEDIA_ROI_RESULT_CODE_OK:1
+,MULTIMEDIA_ROI_ERROR_FAILED:-100
+
+      };
+export const MultiMediaRoiInfoResultCodeMap={
+        
+      };
+export const MultiMediaRoiInfoResultCodeList=[
+        
+      ];
 export const ImageInfoResultCode={
           IMAGE_RESULT_CODE_NONE:0
 ,IMAGE_RESULT_CODE_OK:1
@@ -141,6 +189,30 @@ export const ImageInfoResultCodeMap={
         
       };
 export const ImageInfoResultCodeList=[
+        
+      ];
+export const ImageInfoResultCode={
+          IMAGE_RESULT_CODE_NONE:0
+,IMAGE_RESULT_CODE_OK:1
+,IMAGE_ERROR_FAILED:-100
+
+      };
+export const ImageInfoResultCodeMap={
+        
+      };
+export const ImageInfoResultCodeList=[
+        
+      ];
+export const ExposureTimeInfoResultCode={
+          EXPOSURE_TIME_INFO_RESULT_CODE_NONE:0
+,EXPOSURE_TIME_INFO_RESULT_CODE_OK:1
+,EXPOSURE_TIME_INFO_ERROR_FAILED:-100
+
+      };
+export const ExposureTimeInfoResultCodeMap={
+        
+      };
+export const ExposureTimeInfoResultCodeList=[
         
       ];
 export const ExposureTimeInfoResultCode={
@@ -168,9 +240,9 @@ export const ConfigImageInfoResultCodeList=[
         
       ];
 export const ConfigImageInfoResultCode={
-          CONFIG_IMAGE_RESULT_CODE_NONE:0
-,CONFIG_IMAGE_RESULT_CODE_OK:1
-,CONFIG_IMAGE_ERROR_FAILED:-100
+          WHITE_BALANCE_RESULT_CODE_NONE:0
+,WHITE_BALANCE_CODE_OK:1
+,WHITE_BALANCE_ERROR_FAILED:-100
 
       };
 export const ConfigImageInfoResultCodeMap={
@@ -179,16 +251,28 @@ export const ConfigImageInfoResultCodeMap={
 export const ConfigImageInfoResultCodeList=[
         
       ];
-export const PreviewLensInfoResultCode={
-          PREVIEW_RESULT_CODE_NONE:0
-,PREVIEW_RESULT_CODE_OK:1
-,PREVIEW_ERROR_FAILED:-100
+export const LensInfoResultCode={
+          LENS_INFO_RESULT_CODE_NONE:0
+,LENS_INFO_RESULT_CODE_OK:1
+,LENS_INFO_ERROR_FAILED:-100
 
       };
-export const PreviewLensInfoResultCodeMap={
+export const LensInfoResultCodeMap={
         
       };
-export const PreviewLensInfoResultCodeList=[
+export const LensInfoResultCodeList=[
+        
+      ];
+export const LensInfoResultCode={
+          LENS_INFO_RESULT_CODE_NONE:0
+,LENS_INFO_RESULT_CODE_OK:1
+,LENS_INFO_ERROR_FAILED:-100
+
+      };
+export const LensInfoResultCodeMap={
+        
+      };
+export const LensInfoResultCodeList=[
         
       ];
 export const ImageEnhancementResultCode={
@@ -203,3 +287,136 @@ export const ImageEnhancementResultCodeMap={
 export const ImageEnhancementResultCodeList=[
         
       ];
+export const ImageEnhancementResultCode={
+          IMAGE_ENHANCE_RESULT_CODE_NONE:0
+,IMAGE_ENHANCE_CODE_OK:1
+,IMAGE_ENHANCE_ERROR_FAILED:-100
+
+      };
+export const ImageEnhancementResultCodeMap={
+        
+      };
+export const ImageEnhancementResultCodeList=[
+        
+      ];
+export const ConfigRtspCertificationModeResultCode={
+          CONFIG_RTSP_CERTIFICATION_MODE_RESULT_CODE_NONE:0
+,CONFIG_RTSP_CERTIFICATION_MODE_RESULT_CODE_OK:1
+,CONFIG_RTSP_CERTIFICATION_MODE_ERROR_FAILED:-100
+
+      };
+export const ConfigRtspCertificationModeResultCodeMap={
+        
+      };
+export const ConfigRtspCertificationModeResultCodeList=[
+        
+      ];
+export const GetRtspCertificationModeResultCode={
+          GET_RTSP_CERTIFICATION_MODE_RESULT_CODE_NONE:0
+,GET_RTSP_CERTIFICATION_MODE_RESULT_CODE_OK:1
+,GET_RTSP_CERTIFICATION_MODE_ERROR_FAILED:-100
+
+      };
+export const GetRtspCertificationModeResultCodeMap={
+        
+      };
+export const GetRtspCertificationModeResultCodeList=[
+        
+      ];
+export const ConfigOnvifModeResultCode={
+          CONFIG_ONVIF_MODE_RESULT_CODE_NONE:0
+,CONFIG_ONVIF_MODE_RESULT_CODE_OK:1
+,CONFIG_ONVIF_MODE_ERROR_FAILED:-100
+
+      };
+export const ConfigOnvifModeResultCodeMap={
+        
+      };
+export const ConfigOnvifModeResultCodeList=[
+        
+      ];
+export const GetOnvifModeResultCode={
+          GET_ONVIF_MODE_RESULT_CODE_NONE:0
+,GET_ONVIF_MODE_RESULT_CODE_OK:1
+,GET_ONVIF_MODE_ERROR_FAILED:-100
+
+      };
+export const GetOnvifModeResultCodeMap={
+        
+      };
+export const GetOnvifModeResultCodeList=[
+        
+      ];
+export const ConfigRtmpModeResultCode={
+          CONFIG_RTMP_MODE_RESULT_CODE_NONE:0
+,CONFIG_RTMP_MODE_RESULT_CODE_OK:1
+,CONFIG_RTMP_MODE_ERROR_FAILED:-100
+
+      };
+export const ConfigRtmpModeResultCodeMap={
+        
+      };
+export const ConfigRtmpModeResultCodeList=[
+        
+      ];
+export const GetRtmpModeResultCode={
+          GET_RTMP_MODE_RESULT_CODE_NONE:0
+,GET_RTMP_MODE_RESULT_CODE_OK:1
+,GET_RTMP_MODE_ERROR_FAILED:-100
+
+      };
+export const GetRtmpModeResultCodeMap={
+        
+      };
+export const GetRtmpModeResultCodeList=[
+        
+      ];
+export const ConfigGB28181ModeResultCode={
+          CONFIG_GB28181_MODE_RESULT_CODE_NONE:0
+,CONFIG_GB28181_MODE_RESULT_CODE_OK:1
+,CONFIG_GB28181_MODE_ERROR_FAILED:-100
+
+      };
+export const ConfigGB28181ModeResultCodeMap={
+        
+      };
+export const ConfigGB28181ModeResultCodeList=[
+        
+      ];
+export const GetGB28181ModeResultCode={
+          GET_GB28181_MODE_RESULT_CODE_NONE:0
+,GET_GB28181_MODE_RESULT_CODE_OK:1
+,GET_GB28181_MODE_ERROR_FAILED:-100
+
+      };
+export const GetGB28181ModeResultCodeMap={
+        
+      };
+export const GetGB28181ModeResultCodeList=[
+        
+      ];
+export const ConfigFTPModeResultCode={
+          CONFIG_FTP_MODE_RESULT_CODE_NONE:0
+,CONFIG_FTP_MODE_RESULT_CODE_OK:1
+,CONFIG_FTP_MODE_ERROR_FAILED:-100
+
+      };
+export const ConfigFTPModeResultCodeMap={
+        
+      };
+export const ConfigFTPModeResultCodeList=[
+        
+      ];
+export const GetFTPModeResultCode={
+          GET_FTP_MODE_RESULT_CODE_NONE:0
+,GET_FTP_MODE_RESULT_CODE_OK:1
+,GET_FTP_MODE_ERROR_FAILED:-100
+
+      };
+export const GetFTPModeResultCodeMap={
+        
+      };
+export const GetFTPModeResultCodeList=[
+        
+      ];
+export default {ConfigOption,ConfigOptionMap,ConfigOptionList,ConfigNetworkAdaptorResultCode,ConfigNetworkAdaptorResultCodeMap,ConfigNetworkAdaptorResultCodeList,ConfigSystemTimeResultCode,ConfigSystemTimeResultCodeMap,ConfigSystemTimeResultCodeList,ConfigScheduledRebootResultCode,ConfigScheduledRebootResultCodeMap,ConfigScheduledRebootResultCodeList,ConfigHeartBeatPushResultCode,ConfigHeartBeatPushResultCodeMap,ConfigHeartBeatPushResultCodeList,GetHeartBeatPushResultCode,GetHeartBeatPushResultCodeMap,GetHeartBeatPushResultCodeList,ConfigDeviceParamResultCode,ConfigDeviceParamResultCodeMap,ConfigDeviceParamResultCodeList,MultiMediaVideoInfoResultCode,MultiMediaVideoInfoResultCodeMap,MultiMediaVideoInfoResultCodeList,MultiMediaVideoInfoResultCode,MultiMediaVideoInfoResultCodeMap,MultiMediaVideoInfoResultCodeList,MultiMediaAudioInfoResultCode,MultiMediaAudioInfoResultCodeMap,MultiMediaAudioInfoResultCodeList,MultiMediaAudioInfoResultCode,MultiMediaAudioInfoResultCodeMap,MultiMediaAudioInfoResultCodeList,MultiMediaOsdInfoResultCode,MultiMediaOsdInfoResultCodeMap,MultiMediaOsdInfoResultCodeList,MultiMediaOsdInfoResultCode,MultiMediaOsdInfoResultCodeMap,MultiMediaOsdInfoResultCodeList,MultiMediaRoiInfoResultCode,MultiMediaRoiInfoResultCodeMap,MultiMediaRoiInfoResultCodeList,MultiMediaRoiInfoResultCode,MultiMediaRoiInfoResultCodeMap,MultiMediaRoiInfoResultCodeList,ImageInfoResultCode,ImageInfoResultCodeMap,ImageInfoResultCodeList,ImageInfoResultCode,ImageInfoResultCodeMap,ImageInfoResultCodeList,ExposureTimeInfoResultCode,ExposureTimeInfoResultCodeMap,ExposureTimeInfoResultCodeList,ExposureTimeInfoResultCode,ExposureTimeInfoResultCodeMap,ExposureTimeInfoResultCodeList,ConfigImageInfoResultCode,ConfigImageInfoResultCodeMap,ConfigImageInfoResultCodeList,ConfigImageInfoResultCode,ConfigImageInfoResultCodeMap,ConfigImageInfoResultCodeList,LensInfoResultCode,LensInfoResultCodeMap,LensInfoResultCodeList,LensInfoResultCode,LensInfoResultCodeMap,LensInfoResultCodeList,ImageEnhancementResultCode,ImageEnhancementResultCodeMap,ImageEnhancementResultCodeList,ImageEnhancementResultCode,ImageEnhancementResultCodeMap,ImageEnhancementResultCodeList,ConfigRtspCertificationModeResultCode,ConfigRtspCertificationModeResultCodeMap,ConfigRtspCertificationModeResultCodeList,GetRtspCertificationModeResultCode,GetRtspCertificationModeResultCodeMap,GetRtspCertificationModeResultCodeList,ConfigOnvifModeResultCode,ConfigOnvifModeResultCodeMap,ConfigOnvifModeResultCodeList,GetOnvifModeResultCode,GetOnvifModeResultCodeMap,GetOnvifModeResultCodeList,ConfigRtmpModeResultCode,ConfigRtmpModeResultCodeMap,ConfigRtmpModeResultCodeList,GetRtmpModeResultCode,GetRtmpModeResultCodeMap,GetRtmpModeResultCodeList,ConfigGB28181ModeResultCode,ConfigGB28181ModeResultCodeMap,ConfigGB28181ModeResultCodeList,GetGB28181ModeResultCode,GetGB28181ModeResultCodeMap,GetGB28181ModeResultCodeList,ConfigFTPModeResultCode,ConfigFTPModeResultCodeMap,ConfigFTPModeResultCodeList,GetFTPModeResultCode,GetFTPModeResultCodeMap,GetFTPModeResultCodeList}

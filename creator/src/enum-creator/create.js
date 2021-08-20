@@ -8,7 +8,7 @@ module.exports = function creator(filePath, fileName) {
   });
   let all = [];
   let n = 0;
-
+  let allexport = "export default {"
   result.replace(/enum (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
     let obj = {
       name: b.trim(),
@@ -45,12 +45,14 @@ module.exports = function creator(filePath, fileName) {
 
   //console.dir(all[10]);
   let distPath = path.resolve(__dirname, "enum", fileName.slice(0, -5) + "js");
-  if(fs.existsSync(distPath)){
+  if (fs.existsSync(distPath)) {
     fs.writeFileSync(distPath, '');
   }
+  
 
   all.forEach(a => {
     let name = a.name;
+
     let defineConst = `export const ${name}={
           ${a.list.map(n=>{
               return n.key+":"+n.value+"\n"
@@ -76,8 +78,14 @@ module.exports = function creator(filePath, fileName) {
       ];\n`
 
       fs.appendFileSync(distPath, defineList);
+      allexport += name + ",";
+      allexport += name + "Map,";
+      allexport += name + "List,";
     }
+    
     //console.log(defineConst)
   })
-
+  allexport=allexport.slice(0,-1);
+  allexport += "}";
+  fs.appendFileSync(distPath, allexport);
 }

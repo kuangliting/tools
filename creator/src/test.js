@@ -1,41 +1,33 @@
+console.log(process.argv);
 const fs = require("fs");
+const fs2 = require("fs-extra");
 const path = require("path");
-const entryConfig = require("./enum-creator/config");
-const {sourceDir,}=entryConfig
-const baseUrl = path.resolve(__dirname, '../protobuf');
-const dumuUrl = path.resolve(__dirname, '../protobuf-dumu/protobuf');
-//let dumuulist = ["common/dumu_common.proto", "config/dumu_saas_config.proto", "action/dumu_saas_action.proto", "dumu_service/status/dumu_service_status.proto"];
-dumuulist=[];
-//const index = 'web/web.proto';
-//let index = "web/action/dumu_web_action.proto";
-//let dist = "../z-build/action2.js";
-
+const entryConfig = require("./config");
+const {
+  sourceDir,
+  actionProtoFile,
+  distProtoDir
+} = entryConfig;
+const baseUrl = path.resolve(sourceDir, './protobuf');
 let config = {
-  dist: "../z-build/proto",
+  distDir:path.resolve(__dirname, '../dist'),
+  dist: path.resolve(__dirname, '../dist/action.js'),
   entry: {
-    // common: {
-    //   index: "common/dumu_common.proto",
-    // },
-    // config: {
-    //   index: "config/dumu_config.proto",
-    // },
     action: {
-      index: "web/action/dumu_web_action.proto",
-      //index: "config/dumu_config_action.proto",
+      index: path.resolve(sourceDir, './protobuf/web/action/dumu_web_action.proto'),
     },
-    // info: {
-    //   index: "web/status/dumu_web_info.proto",
-    // }
   },
 }
 
-function run(index, dist) {
+function run(index, distUrl) {
   let sumMessage = 0;
   let buildMap = {};
   let globalObj = {};
   let parentMap = {};
-  let distUrl = path.resolve(baseUrl, dist);
-  fs.writeFileSync(distUrl, '')
+  if (fs.existsSync(distUrl)) {
+    fs.writeFileSync(distUrl, '')
+  }  
+
   const originalType = ['uint32', 'int32', 'float', 'string', 'bool'];
 
   function url2name(url) {
@@ -56,7 +48,6 @@ function run(index, dist) {
     //     encoding: 'utf-8'
     //   });
     // } else {
-     
     // }
     result = fs.readFileSync(path.resolve(baseUrl, url), {
       encoding: 'utf-8'
@@ -89,31 +80,13 @@ function run(index, dist) {
 
     })
     //console.log(result);
-
-
     const innerRexp = /\{([\n\s]*?enum.+\{[\n\s\S]*?\})/g;
-
-
     result = result.replace(innerRexp, function (a, b, c) {
       return "";
     })
-
-    //console.log(result);
-    //console.log(result);
-
     var patt = /(.+)\n?/mg;
     var r = "";
     let count = 0;
-
-    // while (r = patt.exec(result)) {
-    //   let line=r[0].trim();
-    //   let i = line.indexOf("/**");
-    //   console.log(line);
-    //   console.log("-------------------------------");
-    //   count++; 
-    // }
-
-    //console.log(count);
 
     result.replace(/message (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
       let obj = {
@@ -168,13 +141,13 @@ function run(index, dist) {
             propObj[propName] = {
               type,
               desc,
-              isArray:true
+              isArray: true
             }
           } else {
             propObj[propName] = {
               type,
               desc,
-              isArray:false
+              isArray: false
             }
           }
         }
@@ -194,25 +167,28 @@ function run(index, dist) {
       build(m);
     });
     buildMap[url] = true;
-
   }
   build(index);
-
   //console.log("Object.keys(globalObj).length===sumMessage", Object.keys(globalObj).length, sumMessage);
-
   let bf = `export default `
   fs.appendFileSync(distUrl, bf + JSON.stringify(globalObj) + ";");
-
   //return build;
 }
 
-let distPath = path.resolve(baseUrl, config.dist);
+let distPath = config.dist;  
 
-if (!fs.existsSync(distPath)) {
-  fs.mkdirSync(distPath)
+if (!fs.existsSync(config.distDir)) {
+  fs.mkdirSync(config.distDir)
 }
 Object.keys(config.entry).forEach(d => {
-  let obj = config.entry[d];
-  let dist = `${config.dist}/${d}.js`;
-  run(obj.index, dist);
+ let obj = config.entry[d];
+ // let dist = `${config.dist}/${d}.js`;
+  run(obj.index, distPath);
 })
+
+fs2.copySync(path.resolve(__dirname,"../dist/action.js"),path.resolve(__dirname,distProtoDir,"action.js"));
+
+
+
+
+ 

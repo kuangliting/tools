@@ -151,3 +151,4 @@ export const RecogTypeMap={
 export const RecogTypeList=[
         {label:'全部',value:RecogType.ANY_TYPE},{label:'白名单',value:RecogType.WHITELIST_ONLY},{label:'黑名单',value:RecogType.BLACKLIST_ONLY},{label:'陌生人',value:RecogType.NOT_RECOGNIZED}
       ];
+export default {ImgFileType,ImgFileTypeMap,ImgFileTypeList,Gender,GenderMap,GenderList,GlassType,GlassTypeMap,GlassTypeList,StaffType,StaffTypeMap,StaffTypeList,ScreenSplitType,ScreenSplitTypeMap,ScreenSplitTypeList,StreamStatus,StreamStatusMap,StreamStatusList,StaffLabelType,StaffLabelTypeMap,StaffLabelTypeList,ErrorCode,ErrorCodeMap,ErrorCodeList,RecogType,RecogTypeMap,RecogTypeList}

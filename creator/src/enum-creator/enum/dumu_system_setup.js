@@ -157,3 +157,4 @@ export const UpgradeStatusMap={
 export const UpgradeStatusList=[
         {label:'空闲',value:UpgradeStatus.UPGRADE_IDLE},{label:'开始',value:UpgradeStatus.UPGRADE_START},{label:'处理中',value:UpgradeStatus.UPGRADE_RUN},{label:'成功',value:UpgradeStatus.UPGRADE_SUCCESS},{label:'失败',value:UpgradeStatus.UPGRADE_FAILURE},{label:'下载',value:UpgradeStatus.UPGRADE_DOWNLOAD},{label:'完成',value:UpgradeStatus.UPGRADE_DONE}
       ];
+export default {NetworkMode,NetworkModeMap,NetworkModeList,IpProtocolVersion,IpProtocolVersionMap,IpProtocolVersionList,MeridiemFlag,MeridiemFlagMap,MeridiemFlagList,TimeFormat,TimeFormatMap,TimeFormatList,TimeZone,TimeZoneMap,TimeZoneList,NtpSwitch,NtpSwitchMap,NtpSwitchList,RebootTimeType,RebootTimeTypeMap,RebootTimeTypeList,LogExportTime,LogExportTimeMap,LogExportTimeList,UploadDataType,UploadDataTypeMap,UploadDataTypeList,ReceiveServiceType,ReceiveServiceTypeMap,ReceiveServiceTypeList,UpgradeStatus,UpgradeStatusMap,UpgradeStatusList}

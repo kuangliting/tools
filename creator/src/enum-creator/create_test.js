@@ -27,7 +27,6 @@ sourceFiles.forEach(cfg => {
     }
 
 })
-const targetProjectDir = "C:/code/baidu/personal-code/Amba-AICam-Web";
-const targetDir = "src/utils/enum";
+ 
 
-fs2.copySync(path.resolve(__dirname, "enum"), path.resolve(targetProjectDir, targetDir));
+ 

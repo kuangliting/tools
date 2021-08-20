@@ -2,18 +2,14 @@ const fs = require("fs");
 const fs2 = require("fs-extra");
 const path = require("path");
 const entryConfig = require("./config");
+console.log("process.argv");
+console.log(process.argv);
 const {
   sourceDir,
   actionProtoFile,
   distProtoDir
 } = entryConfig;
 const baseUrl = path.resolve(sourceDir, './protobuf');
-//const dumuUrl = path.resolve(__dirname, '../protobuf-dumu/protobuf');
-//let dumuulist = ["common/dumu_common.proto", "config/dumu_saas_config.proto", "action/dumu_saas_action.proto", "dumu_service/status/dumu_service_status.proto"];
-//dumuulist = [];
-//const index = 'web/web.proto';
-//let index = "web/action/dumu_web_action.proto";
-//let dist = "../z-build/action2.js";
 let config = {
   distDir:path.resolve(__dirname, '../dist'),
   dist: path.resolve(__dirname, '../dist/action.js'),
@@ -21,7 +17,6 @@ let config = {
     action: {
       index: path.resolve(sourceDir, './protobuf/web/action/dumu_web_action.proto'),
     },
-
   },
 }
 
@@ -90,21 +85,9 @@ function run(index, distUrl) {
     result = result.replace(innerRexp, function (a, b, c) {
       return "";
     })
-
-    //console.log(result);
-    //console.log(result);
     var patt = /(.+)\n?/mg;
     var r = "";
     let count = 0;
-
-    // while (r = patt.exec(result)) {
-    //   let line=r[0].trim();
-    //   let i = line.indexOf("/**");
-    //   console.log(line);
-    //   console.log("-------------------------------");
-    //   count++; 
-    // }
-    //console.log(count);
 
     result.replace(/message (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
       let obj = {
@@ -193,7 +176,7 @@ function run(index, distUrl) {
   //return build;
 }
 
-let distPath = config.dist; //path.resolve(baseUrl, config.dist);
+let distPath = config.dist;  
 
 if (!fs.existsSync(config.distDir)) {
   fs.mkdirSync(config.distDir)

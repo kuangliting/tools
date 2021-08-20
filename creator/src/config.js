@@ -10,7 +10,6 @@ module.exports = {
         }
     ],
     actionProtoFile:"",
-    distProtoDir:"C:/code/capture_web/src/views/create-code/proto",
-    distWebProtoFile:"C:/code/capture_web/public/webproto.js",
-    //actionProtoFile:""
+    distProtoDir:"C:/code/baidu/personal-code/Amba-AICam-Web/src/views/create-code/proto",
+    distWebProtoFile:"C:/code/baidu/personal-code/Amba-AICam-Web/public/webproto.js",
 }

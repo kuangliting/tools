@@ -8,7 +8,9 @@
     "build":"node src/index.js",
     "enum":"node src/enum-creator/run.js",
     "webproto":"node src/updateWebproto.js",
-    "refresh":"npm run build && npm run enum && npm run webproto"
+    "refresh":"node src/index.js --AiCam && node src/enum-creator/run.js --AiCam && node src/updateWebproto.js --AiCam",
+    "refresh:box":"node src/index.js --box && node src/enum-creator/run.js --box && node src/updateWebproto.js --box",
+    "test1":"node src/test.js --box"
   },
   "author": "",
   "license": "ISC",

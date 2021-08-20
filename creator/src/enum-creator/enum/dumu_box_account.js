@@ -20,3 +20,4 @@ export const SetupTypeMap={
 export const SetupTypeList=[
         {label:'仅设置密码',value:SetupType.PASSWORD_ONLY},{label:'设置密码和密保问答',value:SetupType.PASSWORD_AND_REMINDER}
       ];
+export default {LoginType,LoginTypeMap,LoginTypeList,SetupType,SetupTypeMap,SetupTypeList}

@@ -180,24 +180,28 @@ export const AudioTypeList=[
       ];
 export const AudioSampleRate={
           AUDIO_SAMPLE_RATE_NONE:0
-,AUDIO_SAMPLE_RATE_32KBPS:1
-,AUDIO_SAMPLE_RATE_40KBPS:2
-,AUDIO_SAMPLE_RATE_48KBPS:3
-,AUDIO_SAMPLE_RATE_56KBPS:4
-,AUDIO_SAMPLE_RATE_64KBPS:5
-,AUDIO_SAMPLE_RATE_80KBPS:6
-,AUDIO_SAMPLE_RATE_96KBPS:7
-,AUDIO_SAMPLE_RATE_112KBPS:8
-,AUDIO_SAMPLE_RATE_128KBPS:9
-,AUDIO_SAMPLE_RATE_144KBPS:10
-,AUDIO_SAMPLE_RATE_160KBPS:11
+,AUDIO_SAMPLE_RATE_8KHZ:1
+,AUDIO_SAMPLE_RATE_16KHZ:2
+,AUDIO_SAMPLE_RATE_32KHZ:3
+,AUDIO_SAMPLE_RATE_48KHZ:4
 
       };
 export const AudioSampleRateMap={
-        [AudioSampleRate.AUDIO_SAMPLE_RATE_NONE]:'PLACEHOLDER',[AudioSampleRate.AUDIO_SAMPLE_RATE_32KBPS]:'32Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_40KBPS]:'40Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_48KBPS]:'48Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_56KBPS]:'56Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_64KBPS]:'64Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_80KBPS]:'80Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_96KBPS]:'96Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_112KBPS]:'112Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_128KBPS]:'128Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_144KBPS]:'144Kbps',[AudioSampleRate.AUDIO_SAMPLE_RATE_160KBPS]:'160Kbps'
+        [AudioSampleRate.AUDIO_SAMPLE_RATE_NONE]:'PLACEHOLDER',[AudioSampleRate.AUDIO_SAMPLE_RATE_8KHZ]:'8KHz',[AudioSampleRate.AUDIO_SAMPLE_RATE_16KHZ]:'16KHz',[AudioSampleRate.AUDIO_SAMPLE_RATE_32KHZ]:'32KHz',[AudioSampleRate.AUDIO_SAMPLE_RATE_48KHZ]:'48KHz'
       };
 export const AudioSampleRateList=[
-        {label:'PLACEHOLDER',value:AudioSampleRate.AUDIO_SAMPLE_RATE_NONE},{label:'32Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_32KBPS},{label:'40Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_40KBPS},{label:'48Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_48KBPS},{label:'56Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_56KBPS},{label:'64Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_64KBPS},{label:'80Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_80KBPS},{label:'96Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_96KBPS},{label:'112Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_112KBPS},{label:'128Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_128KBPS},{label:'144Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_144KBPS},{label:'160Kbps',value:AudioSampleRate.AUDIO_SAMPLE_RATE_160KBPS}
+        {label:'PLACEHOLDER',value:AudioSampleRate.AUDIO_SAMPLE_RATE_NONE},{label:'8KHz',value:AudioSampleRate.AUDIO_SAMPLE_RATE_8KHZ},{label:'16KHz',value:AudioSampleRate.AUDIO_SAMPLE_RATE_16KHZ},{label:'32KHz',value:AudioSampleRate.AUDIO_SAMPLE_RATE_32KHZ},{label:'48KHz',value:AudioSampleRate.AUDIO_SAMPLE_RATE_48KHZ}
+      ];
+export const AudioInputSourceType={
+          AUDIO_SOURCE_TYPE_LINEIN:0
+,AUDIO_SOURCE_TYPE_MIC:1
+
+      };
+export const AudioInputSourceTypeMap={
+        [AudioInputSourceType.AUDIO_SOURCE_TYPE_LINEIN]:'LineIn',[AudioInputSourceType.AUDIO_SOURCE_TYPE_MIC]:'MIC'
+      };
+export const AudioInputSourceTypeList=[
+        {label:'LineIn',value:AudioInputSourceType.AUDIO_SOURCE_TYPE_LINEIN},{label:'MIC',value:AudioInputSourceType.AUDIO_SOURCE_TYPE_MIC}
       ];
 export const OSD_Font_Color={
           OSD_COLOR_RED:0
@@ -213,3 +217,4 @@ export const OSD_Font_ColorMap={
 export const OSD_Font_ColorList=[
         {label:'红色',value:OSD_Font_Color.OSD_COLOR_RED},{label:'白色',value:OSD_Font_Color.OSD_COLOR_WHITE},{label:'蓝色',value:OSD_Font_Color.OSD_COLOR_BLUE},{label:'绿色',value:OSD_Font_Color.OSD_COLOR_GREEN},{label:'黄色',value:OSD_Font_Color.OSD_COLOR_YELLOW}
       ];
+export default {ImportDeviceType,ImportDeviceTypeMap,ImportDeviceTypeList,DeviceWorkStatus,DeviceWorkStatusMap,DeviceWorkStatusList,DeviceServiceMode,DeviceServiceModeMap,DeviceServiceModeList,DeviceAccessProtocol,DeviceAccessProtocolMap,DeviceAccessProtocolList,DeviceCaptureStrategy,DeviceCaptureStrategyMap,DeviceCaptureStrategyList,FaceQualityRequire,FaceQualityRequireMap,FaceQualityRequireList,DeviceOperation,DeviceOperationMap,DeviceOperationList,StreamSelection,StreamSelectionMap,StreamSelectionList,StreamType,StreamTypeMap,StreamTypeList,VideoResolution,VideoResolutionMap,VideoResolutionList,VideoStreamBitRateType,VideoStreamBitRateTypeMap,VideoStreamBitRateTypeList,EncodeType,EncodeTypeMap,EncodeTypeList,ConstantBitRateLevel,ConstantBitRateLevelMap,ConstantBitRateLevelList,AudioType,AudioTypeMap,AudioTypeList,AudioSampleRate,AudioSampleRateMap,AudioSampleRateList,AudioInputSourceType,AudioInputSourceTypeMap,AudioInputSourceTypeList,OSD_Font_Color,OSD_Font_ColorMap,OSD_Font_ColorList}
