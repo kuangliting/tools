@@ -419,4 +419,100 @@ export const GetFTPModeResultCodeMap={
 export const GetFTPModeResultCodeList=[
         
       ];
-export default {ConfigOption,ConfigOptionMap,ConfigOptionList,ConfigNetworkAdaptorResultCode,ConfigNetworkAdaptorResultCodeMap,ConfigNetworkAdaptorResultCodeList,ConfigSystemTimeResultCode,ConfigSystemTimeResultCodeMap,ConfigSystemTimeResultCodeList,ConfigScheduledRebootResultCode,ConfigScheduledRebootResultCodeMap,ConfigScheduledRebootResultCodeList,ConfigHeartBeatPushResultCode,ConfigHeartBeatPushResultCodeMap,ConfigHeartBeatPushResultCodeList,GetHeartBeatPushResultCode,GetHeartBeatPushResultCodeMap,GetHeartBeatPushResultCodeList,ConfigDeviceParamResultCode,ConfigDeviceParamResultCodeMap,ConfigDeviceParamResultCodeList,MultiMediaVideoInfoResultCode,MultiMediaVideoInfoResultCodeMap,MultiMediaVideoInfoResultCodeList,MultiMediaVideoInfoResultCode,MultiMediaVideoInfoResultCodeMap,MultiMediaVideoInfoResultCodeList,MultiMediaAudioInfoResultCode,MultiMediaAudioInfoResultCodeMap,MultiMediaAudioInfoResultCodeList,MultiMediaAudioInfoResultCode,MultiMediaAudioInfoResultCodeMap,MultiMediaAudioInfoResultCodeList,MultiMediaOsdInfoResultCode,MultiMediaOsdInfoResultCodeMap,MultiMediaOsdInfoResultCodeList,MultiMediaOsdInfoResultCode,MultiMediaOsdInfoResultCodeMap,MultiMediaOsdInfoResultCodeList,MultiMediaRoiInfoResultCode,MultiMediaRoiInfoResultCodeMap,MultiMediaRoiInfoResultCodeList,MultiMediaRoiInfoResultCode,MultiMediaRoiInfoResultCodeMap,MultiMediaRoiInfoResultCodeList,ImageInfoResultCode,ImageInfoResultCodeMap,ImageInfoResultCodeList,ImageInfoResultCode,ImageInfoResultCodeMap,ImageInfoResultCodeList,ExposureTimeInfoResultCode,ExposureTimeInfoResultCodeMap,ExposureTimeInfoResultCodeList,ExposureTimeInfoResultCode,ExposureTimeInfoResultCodeMap,ExposureTimeInfoResultCodeList,ConfigImageInfoResultCode,ConfigImageInfoResultCodeMap,ConfigImageInfoResultCodeList,ConfigImageInfoResultCode,ConfigImageInfoResultCodeMap,ConfigImageInfoResultCodeList,LensInfoResultCode,LensInfoResultCodeMap,LensInfoResultCodeList,LensInfoResultCode,LensInfoResultCodeMap,LensInfoResultCodeList,ImageEnhancementResultCode,ImageEnhancementResultCodeMap,ImageEnhancementResultCodeList,ImageEnhancementResultCode,ImageEnhancementResultCodeMap,ImageEnhancementResultCodeList,ConfigRtspCertificationModeResultCode,ConfigRtspCertificationModeResultCodeMap,ConfigRtspCertificationModeResultCodeList,GetRtspCertificationModeResultCode,GetRtspCertificationModeResultCodeMap,GetRtspCertificationModeResultCodeList,ConfigOnvifModeResultCode,ConfigOnvifModeResultCodeMap,ConfigOnvifModeResultCodeList,GetOnvifModeResultCode,GetOnvifModeResultCodeMap,GetOnvifModeResultCodeList,ConfigRtmpModeResultCode,ConfigRtmpModeResultCodeMap,ConfigRtmpModeResultCodeList,GetRtmpModeResultCode,GetRtmpModeResultCodeMap,GetRtmpModeResultCodeList,ConfigGB28181ModeResultCode,ConfigGB28181ModeResultCodeMap,ConfigGB28181ModeResultCodeList,GetGB28181ModeResultCode,GetGB28181ModeResultCodeMap,GetGB28181ModeResultCodeList,ConfigFTPModeResultCode,ConfigFTPModeResultCodeMap,ConfigFTPModeResultCodeList,GetFTPModeResultCode,GetFTPModeResultCodeMap,GetFTPModeResultCodeList}
+export const GetMotionDetectEventResultCode={
+          GET_MOTION_DETECT_EVENT_RESULT_CODE_NONE:0
+,GET_MOTION_DETECT_EVENT_RESULT_CODE_OK:1
+,GET_MOTION_DETECT_EVENT_ERROR_FAILED:-100
+
+      };
+export const GetMotionDetectEventResultCodeMap={
+        
+      };
+export const GetMotionDetectEventResultCodeList=[
+        
+      ];
+export const ConfigMotionDetectEventResultCode={
+          CONFIG_MOTION_DETECT_EVENT_RESULT_CODE_NONE:0
+,CONFIG_MOTION_DETECT_EVENT_RESULT_CODE_OK:1
+,CONFIG_MOTION_DETECT_EVENT_ERROR_FAILED:-100
+
+      };
+export const ConfigMotionDetectEventResultCodeMap={
+        
+      };
+export const ConfigMotionDetectEventResultCodeList=[
+        
+      ];
+export const GetImageOcclusionEventResultCode={
+          GET_IMAGE_OCCLUSION_EVENT_RESULT_CODE_NONE:0
+,GET_IMAGE_OCCLUSION_EVENT_RESULT_CODE_OK:1
+,GET_IMAGE_OCCLUSION_EVENT_ERROR_FAILED:-100
+
+      };
+export const GetImageOcclusionEventResultCodeMap={
+        
+      };
+export const GetImageOcclusionEventResultCodeList=[
+        
+      ];
+export const ConfigImageOcclusionEventResultCode={
+          CONFIG_IMAGE_OCCLUSION_EVENT_RESULT_CODE_NONE:0
+,CONFIG_IMAGE_OCCLUSION_EVENT_RESULT_CODE_OK:1
+,CONFIG_IMAGE_OCCLUSION_EVENT_ERROR_FAILED:-100
+
+      };
+export const ConfigImageOcclusionEventResultCodeMap={
+        
+      };
+export const ConfigImageOcclusionEventResultCodeList=[
+        
+      ];
+export const GetAlarmInEventResultCode={
+          GET_ALARM_IN_EVENT_RESULT_CODE_NONE:0
+,GET_ALARM_IN_EVENT_RESULT_CODE_OK:1
+,GET_ALARM_IN_EVENT_ERROR_FAILED:-100
+
+      };
+export const GetAlarmInEventResultCodeMap={
+        
+      };
+export const GetAlarmInEventResultCodeList=[
+        
+      ];
+export const ConfigAlarmInEventResultCode={
+          CONFIG_ALARM_IN_EVENT_RESULT_CODE_NONE:0
+,CONFIG_ALARM_IN_EVENT_RESULT_CODE_OK:1
+,CONFIG_ALARM_IN_EVENT_ERROR_FAILED:-100
+
+      };
+export const ConfigAlarmInEventResultCodeMap={
+        
+      };
+export const ConfigAlarmInEventResultCodeList=[
+        
+      ];
+export const GetOtherExceptionEventResultCode={
+          GET_OTHER_EXCEPTION_EVENT_RESULT_CODE_NONE:0
+,GET_OTHER_EXCEPTION_EVENT_RESULT_CODE_OK:1
+,GET_OTHER_EXCEPTION_EVENT_ERROR_FAILED:-100
+
+      };
+export const GetOtherExceptionEventResultCodeMap={
+        
+      };
+export const GetOtherExceptionEventResultCodeList=[
+        
+      ];
+export const ConfigOtherExceptionEventResultCode={
+          CONFIG_OTHER_EXCEPTION_EVENT_RESULT_CODE_NONE:0
+,CONFIG_OTHER_EXCEPTION_EVENT_RESULT_CODE_OK:1
+,CONFIG_OTHER_EXCEPTION_EVENT_ERROR_FAILED:-100
+
+      };
+export const ConfigOtherExceptionEventResultCodeMap={
+        
+      };
+export const ConfigOtherExceptionEventResultCodeList=[
+        
+      ];
+export default {ConfigOption,ConfigOptionMap,ConfigOptionList,ConfigNetworkAdaptorResultCode,ConfigNetworkAdaptorResultCodeMap,ConfigNetworkAdaptorResultCodeList,ConfigSystemTimeResultCode,ConfigSystemTimeResultCodeMap,ConfigSystemTimeResultCodeList,ConfigScheduledRebootResultCode,ConfigScheduledRebootResultCodeMap,ConfigScheduledRebootResultCodeList,ConfigHeartBeatPushResultCode,ConfigHeartBeatPushResultCodeMap,ConfigHeartBeatPushResultCodeList,GetHeartBeatPushResultCode,GetHeartBeatPushResultCodeMap,GetHeartBeatPushResultCodeList,ConfigDeviceParamResultCode,ConfigDeviceParamResultCodeMap,ConfigDeviceParamResultCodeList,MultiMediaVideoInfoResultCode,MultiMediaVideoInfoResultCodeMap,MultiMediaVideoInfoResultCodeList,MultiMediaVideoInfoResultCode,MultiMediaVideoInfoResultCodeMap,MultiMediaVideoInfoResultCodeList,MultiMediaAudioInfoResultCode,MultiMediaAudioInfoResultCodeMap,MultiMediaAudioInfoResultCodeList,MultiMediaAudioInfoResultCode,MultiMediaAudioInfoResultCodeMap,MultiMediaAudioInfoResultCodeList,MultiMediaOsdInfoResultCode,MultiMediaOsdInfoResultCodeMap,MultiMediaOsdInfoResultCodeList,MultiMediaOsdInfoResultCode,MultiMediaOsdInfoResultCodeMap,MultiMediaOsdInfoResultCodeList,MultiMediaRoiInfoResultCode,MultiMediaRoiInfoResultCodeMap,MultiMediaRoiInfoResultCodeList,MultiMediaRoiInfoResultCode,MultiMediaRoiInfoResultCodeMap,MultiMediaRoiInfoResultCodeList,ImageInfoResultCode,ImageInfoResultCodeMap,ImageInfoResultCodeList,ImageInfoResultCode,ImageInfoResultCodeMap,ImageInfoResultCodeList,ExposureTimeInfoResultCode,ExposureTimeInfoResultCodeMap,ExposureTimeInfoResultCodeList,ExposureTimeInfoResultCode,ExposureTimeInfoResultCodeMap,ExposureTimeInfoResultCodeList,ConfigImageInfoResultCode,ConfigImageInfoResultCodeMap,ConfigImageInfoResultCodeList,ConfigImageInfoResultCode,ConfigImageInfoResultCodeMap,ConfigImageInfoResultCodeList,LensInfoResultCode,LensInfoResultCodeMap,LensInfoResultCodeList,LensInfoResultCode,LensInfoResultCodeMap,LensInfoResultCodeList,ImageEnhancementResultCode,ImageEnhancementResultCodeMap,ImageEnhancementResultCodeList,ImageEnhancementResultCode,ImageEnhancementResultCodeMap,ImageEnhancementResultCodeList,ConfigRtspCertificationModeResultCode,ConfigRtspCertificationModeResultCodeMap,ConfigRtspCertificationModeResultCodeList,GetRtspCertificationModeResultCode,GetRtspCertificationModeResultCodeMap,GetRtspCertificationModeResultCodeList,ConfigOnvifModeResultCode,ConfigOnvifModeResultCodeMap,ConfigOnvifModeResultCodeList,GetOnvifModeResultCode,GetOnvifModeResultCodeMap,GetOnvifModeResultCodeList,ConfigRtmpModeResultCode,ConfigRtmpModeResultCodeMap,ConfigRtmpModeResultCodeList,GetRtmpModeResultCode,GetRtmpModeResultCodeMap,GetRtmpModeResultCodeList,ConfigGB28181ModeResultCode,ConfigGB28181ModeResultCodeMap,ConfigGB28181ModeResultCodeList,GetGB28181ModeResultCode,GetGB28181ModeResultCodeMap,GetGB28181ModeResultCodeList,ConfigFTPModeResultCode,ConfigFTPModeResultCodeMap,ConfigFTPModeResultCodeList,GetFTPModeResultCode,GetFTPModeResultCodeMap,GetFTPModeResultCodeList,GetMotionDetectEventResultCode,GetMotionDetectEventResultCodeMap,GetMotionDetectEventResultCodeList,ConfigMotionDetectEventResultCode,ConfigMotionDetectEventResultCodeMap,ConfigMotionDetectEventResultCodeList,GetImageOcclusionEventResultCode,GetImageOcclusionEventResultCodeMap,GetImageOcclusionEventResultCodeList,ConfigImageOcclusionEventResultCode,ConfigImageOcclusionEventResultCodeMap,ConfigImageOcclusionEventResultCodeList,GetAlarmInEventResultCode,GetAlarmInEventResultCodeMap,GetAlarmInEventResultCodeList,ConfigAlarmInEventResultCode,ConfigAlarmInEventResultCodeMap,ConfigAlarmInEventResultCodeList,GetOtherExceptionEventResultCode,GetOtherExceptionEventResultCodeMap,GetOtherExceptionEventResultCodeList,ConfigOtherExceptionEventResultCode,ConfigOtherExceptionEventResultCodeMap,ConfigOtherExceptionEventResultCodeList}

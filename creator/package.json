@@ -8,9 +8,8 @@
     "build":"node src/index.js",
     "enum":"node src/enum-creator/run.js",
     "webproto":"node src/updateWebproto.js",
-    "refresh":"node src/index.js --AiCam && node src/enum-creator/run.js --AiCam && node src/updateWebproto.js --AiCam",
-    "refresh:box":"node src/index.js --box && node src/enum-creator/run.js --box && node src/updateWebproto.js --box",
-    "test1":"node src/test.js --box"
+    "refresh":"node src/updateWebproto.js --AiCam && node src/index.js --AiCam && node src/enum-creator/run.js --AiCam ",
+    "box":"node src_box/updateWebproto.js  && node src_box/index.js && node src_box/enum-creator/run.js",
   },
   "author": "",
   "license": "ISC",
