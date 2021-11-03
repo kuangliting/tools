@@ -115,16 +115,17 @@ export const LogExportTimeList=[
         {label:'近1天',value:LogExportTime.NEAR_ONE_DAY},{label:'近2天',value:LogExportTime.NEAR_TWO_DAY},{label:'近3天',value:LogExportTime.NEAR_THREE_DAY},{label:'近4天',value:LogExportTime.NEAR_FOUR_DAY},{label:'近5天',value:LogExportTime.NEAR_FIVE_DAY},{label:'近6天',value:LogExportTime.NEAR_SIX_DAY},{label:'近7天',value:LogExportTime.NEAR_SEVEN_DAY}
       ];
 export const UploadDataType={
-          FACE_IMAGE_ALL:0
-,FACE_IMAGE_HAVE_RECOG:1
-,FACE_IMAGE_NO_RECOG:2
+          FACE_IMAGE_HAVE_RECOG:0
+,FACE_IMAGE_NO_RECOG:1
+,ELEC_FENCE_HAVE_RECOG:2
+,ELEC_FENCE_NO_RECOG:3
 
       };
 export const UploadDataTypeMap={
-        [UploadDataType.FACE_IMAGE_ALL]:'全部抓拍人脸图',[UploadDataType.FACE_IMAGE_HAVE_RECOG]:'有识别结果人脸图',[UploadDataType.FACE_IMAGE_NO_RECOG]:'无识别结果人脸图'
+        [UploadDataType.FACE_IMAGE_HAVE_RECOG]:'有识别结果人脸图',[UploadDataType.FACE_IMAGE_NO_RECOG]:'无识别结果人脸图',[UploadDataType.ELEC_FENCE_HAVE_RECOG]:'有识别结果电子围栏抓拍图',[UploadDataType.ELEC_FENCE_NO_RECOG]:'无识别结果电子围栏抓拍图'
       };
 export const UploadDataTypeList=[
-        {label:'全部抓拍人脸图',value:UploadDataType.FACE_IMAGE_ALL},{label:'有识别结果人脸图',value:UploadDataType.FACE_IMAGE_HAVE_RECOG},{label:'无识别结果人脸图',value:UploadDataType.FACE_IMAGE_NO_RECOG}
+        {label:'有识别结果人脸图',value:UploadDataType.FACE_IMAGE_HAVE_RECOG},{label:'无识别结果人脸图',value:UploadDataType.FACE_IMAGE_NO_RECOG},{label:'有识别结果电子围栏抓拍图',value:UploadDataType.ELEC_FENCE_HAVE_RECOG},{label:'无识别结果电子围栏抓拍图',value:UploadDataType.ELEC_FENCE_NO_RECOG}
       ];
 export const ReceiveServiceType={
           SERVICE_TYPE_HTTP:0
@@ -181,14 +182,27 @@ export const AccessModeMap={
 export const AccessModeList=[
         {label:'单机模式',value:AccessMode.ACCESS_MODE_STAND_ALONE},{label:'乘风平台',value:AccessMode.ACCESS_MODE_CHENG_FENG}
       ];
+export const StorageStrategy={
+          STORAGE_STRATEGY_FULL_COVER:0
+,STORAGE_STRATEGY_FULL_STOP:1
+
+      };
+export const StorageStrategyMap={
+        [StorageStrategy.STORAGE_STRATEGY_FULL_COVER]:'满覆盖',[StorageStrategy.STORAGE_STRATEGY_FULL_STOP]:'满即停'
+      };
+export const StorageStrategyList=[
+        {label:'满覆盖',value:StorageStrategy.STORAGE_STRATEGY_FULL_COVER},{label:'满即停',value:StorageStrategy.STORAGE_STRATEGY_FULL_STOP}
+      ];
 export const DeviceInfoType={
           DEVICE_INFO_NAME:0
+,DEVICE_STORAGE_STRATEGY:1
+,DEVICE_INFO_ALL:256
 
       };
 export const DeviceInfoTypeMap={
-        [DeviceInfoType.DEVICE_INFO_NAME]:'设备名称'
+        [DeviceInfoType.DEVICE_INFO_NAME]:'设备名称',[DeviceInfoType.DEVICE_STORAGE_STRATEGY]:'设备存储策略',[DeviceInfoType.DEVICE_INFO_ALL]:'所有信息'
       };
 export const DeviceInfoTypeList=[
-        {label:'设备名称',value:DeviceInfoType.DEVICE_INFO_NAME}
+        {label:'设备名称',value:DeviceInfoType.DEVICE_INFO_NAME},{label:'设备存储策略',value:DeviceInfoType.DEVICE_STORAGE_STRATEGY},{label:'所有信息',value:DeviceInfoType.DEVICE_INFO_ALL}
       ];
-export default {NetworkMode,NetworkModeMap,NetworkModeList,IpProtocolVersion,IpProtocolVersionMap,IpProtocolVersionList,MeridiemFlag,MeridiemFlagMap,MeridiemFlagList,TimeFormat,TimeFormatMap,TimeFormatList,TimeZone,TimeZoneMap,TimeZoneList,NtpSwitch,NtpSwitchMap,NtpSwitchList,RebootTimeType,RebootTimeTypeMap,RebootTimeTypeList,LogExportTime,LogExportTimeMap,LogExportTimeList,UploadDataType,UploadDataTypeMap,UploadDataTypeList,ReceiveServiceType,ReceiveServiceTypeMap,ReceiveServiceTypeList,UpgradeStatus,UpgradeStatusMap,UpgradeStatusList,LogoType,LogoTypeMap,LogoTypeList,AccessMode,AccessModeMap,AccessModeList,DeviceInfoType,DeviceInfoTypeMap,DeviceInfoTypeList}
+export default {NetworkMode,NetworkModeMap,NetworkModeList,IpProtocolVersion,IpProtocolVersionMap,IpProtocolVersionList,MeridiemFlag,MeridiemFlagMap,MeridiemFlagList,TimeFormat,TimeFormatMap,TimeFormatList,TimeZone,TimeZoneMap,TimeZoneList,NtpSwitch,NtpSwitchMap,NtpSwitchList,RebootTimeType,RebootTimeTypeMap,RebootTimeTypeList,LogExportTime,LogExportTimeMap,LogExportTimeList,UploadDataType,UploadDataTypeMap,UploadDataTypeList,ReceiveServiceType,ReceiveServiceTypeMap,ReceiveServiceTypeList,UpgradeStatus,UpgradeStatusMap,UpgradeStatusList,LogoType,LogoTypeMap,LogoTypeList,AccessMode,AccessModeMap,AccessModeList,StorageStrategy,StorageStrategyMap,StorageStrategyList,DeviceInfoType,DeviceInfoTypeMap,DeviceInfoTypeList}

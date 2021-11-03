@@ -84,6 +84,17 @@ export const DeviceOperationMap={
 export const DeviceOperationList=[
         {label:'新增',value:DeviceOperation.DEVICE_OPERATE_ADD},{label:'编辑',value:DeviceOperation.DEVICE_OPERATE_EDIT},{label:'删除',value:DeviceOperation.DEVICE_OPERATE_DELETE},{label:'使能',value:DeviceOperation.DEVICE_OPERATE_ENABLE}
       ];
+export const TransportProtocol={
+          TRANSPORT_RROTOCOL_UDP:0
+,TRANSPORT_PROTOCOL_TCP:1
+
+      };
+export const TransportProtocolMap={
+        [TransportProtocol.TRANSPORT_RROTOCOL_UDP]:'UDP',[TransportProtocol.TRANSPORT_PROTOCOL_TCP]:'TCP'
+      };
+export const TransportProtocolList=[
+        {label:'UDP',value:TransportProtocol.TRANSPORT_RROTOCOL_UDP},{label:'TCP',value:TransportProtocol.TRANSPORT_PROTOCOL_TCP}
+      ];
 export const FilterType={
           FT_SHIED:0
 ,FT_INTEREST:1
@@ -95,4 +106,27 @@ export const FilterTypeMap={
 export const FilterTypeList=[
         {label:'object in this type of area will be removed',value:FilterType.FT_SHIED},{label:'object in this type of area will be captured.',value:FilterType.FT_INTEREST}
       ];
-export default {ImportDeviceType,ImportDeviceTypeMap,ImportDeviceTypeList,DeviceWorkStatus,DeviceWorkStatusMap,DeviceWorkStatusList,DeviceServiceMode,DeviceServiceModeMap,DeviceServiceModeList,DeviceAccessProtocol,DeviceAccessProtocolMap,DeviceAccessProtocolList,DeviceCaptureStrategy,DeviceCaptureStrategyMap,DeviceCaptureStrategyList,FaceQualityRequire,FaceQualityRequireMap,FaceQualityRequireList,DeviceOperation,DeviceOperationMap,DeviceOperationList,FilterType,FilterTypeMap,FilterTypeList}
+export const ElecFenceRule={
+          BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA:0
+,BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA:1
+,BODY_DETECT_REGION_TOP_IN_MONITOR_AREA:2
+
+      };
+export const ElecFenceRuleMap={
+        [ElecFenceRule.BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA]:'人体检测框与监控区域有重叠时告警',[ElecFenceRule.BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA]:'人体检测框底部在监控区域时告警',[ElecFenceRule.BODY_DETECT_REGION_TOP_IN_MONITOR_AREA]:'人体检测框顶部在监控区域时告警'
+      };
+export const ElecFenceRuleList=[
+        {label:'人体检测框与监控区域有重叠时告警',value:ElecFenceRule.BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA},{label:'人体检测框底部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA},{label:'人体检测框顶部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_TOP_IN_MONITOR_AREA}
+      ];
+export const AlarmMode={
+          ALARM_CONTINUOUS:0
+,ALARM_CUSTOM:1
+
+      };
+export const AlarmModeMap={
+        [AlarmMode.ALARM_CONTINUOUS]:'持续报警',[AlarmMode.ALARM_CUSTOM]:'自定义报警'
+      };
+export const AlarmModeList=[
+        {label:'持续报警',value:AlarmMode.ALARM_CONTINUOUS},{label:'自定义报警',value:AlarmMode.ALARM_CUSTOM}
+      ];
+export default {ImportDeviceType,ImportDeviceTypeMap,ImportDeviceTypeList,DeviceWorkStatus,DeviceWorkStatusMap,DeviceWorkStatusList,DeviceServiceMode,DeviceServiceModeMap,DeviceServiceModeList,DeviceAccessProtocol,DeviceAccessProtocolMap,DeviceAccessProtocolList,DeviceCaptureStrategy,DeviceCaptureStrategyMap,DeviceCaptureStrategyList,FaceQualityRequire,FaceQualityRequireMap,FaceQualityRequireList,DeviceOperation,DeviceOperationMap,DeviceOperationList,TransportProtocol,TransportProtocolMap,TransportProtocolList,FilterType,FilterTypeMap,FilterTypeList,ElecFenceRule,ElecFenceRuleMap,ElecFenceRuleList,AlarmMode,AlarmModeMap,AlarmModeList}
