@@ -1,15 +1,20 @@
 const fs = require("fs");
+const fs2 = require('fs-extra')
 const path = require("path");
-
+const {
+  sourceDir
+} = require("../config");
 
 module.exports = function creator(filePath, fileName) {
+  let noContent = true;
+  console.log("-----filePath, fileName----", filePath, fileName, "\n")
   let result = fs.readFileSync(path.resolve(filePath, fileName), {
     encoding: 'utf-8'
   });
   let all = [];
   let n = 0;
   let allexport = "export default {"
-  result.replace(/enum (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
+  result.replace(/enum (\w*)\s*\{([\n\s\S]*?)\}/g, function (a, b, c) {
     let obj = {
       name: b.trim(),
       list: [],
@@ -43,13 +48,16 @@ module.exports = function creator(filePath, fileName) {
     })
   })
 
-  //console.dir(all[10]);
-  let distPath = path.resolve(__dirname, "enum", fileName.slice(0, -5) + "js");
-  if (fs.existsSync(distPath)) {
-    fs.writeFileSync(distPath, '');
+  if (all.length === 0) {
+    return;
+  } else {
+    console.log("-----------all------------");
+    console.log(all);
   }
-  
 
+
+
+  let allDefineContent = '';
   all.forEach(a => {
     let name = a.name;
 
@@ -58,7 +66,8 @@ module.exports = function creator(filePath, fileName) {
               return n.key+":"+n.value+"\n"
           })}
       };\n`
-    fs.appendFileSync(distPath, defineConst);
+    allDefineContent = allDefineContent + defineConst;
+    // fs.appendFileSync(distPath, defineConst);
     if (a.hasDesc) {
       let filterList = a.list.filter(a => {
         return a.desc
@@ -70,24 +79,57 @@ module.exports = function creator(filePath, fileName) {
           }
         })}
       };\n`
-      fs.appendFileSync(distPath, defineMap);
+      allDefineContent = allDefineContent + defineMap;
+      //fs.appendFileSync(distPath, defineMap);
       let defineList = `export const ${name}List=[
         ${filterList.map(n=>{
           return `{label:'${n.desc||""}',value:${name}.${n.key}}`;
         })}
       ];\n`
-
-      fs.appendFileSync(distPath, defineList);
+      noContent = false;
+      //fs.appendFileSync(distPath, defineList);
+      allDefineContent = allDefineContent + defineList;
       allexport += name + ",";
       allexport += name + "Map,";
       allexport += name + "List,";
     }
-    
+
     //console.log(defineConst)
   })
+
+
   if (allexport.slice(-1) !== "{") {
     allexport = allexport.slice(0, -1);
+    allexport += "}";
+  } else {
+    allexport += "}";
   }
-  allexport += "}";
-  fs.appendFileSync(distPath, allexport);
+
+  if (!noContent) {
+    let enumPath = path.resolve(__dirname, "enum");
+    if (!fs.existsSync(enumPath)) {
+      fs2.ensureDir(enumPath)
+    }
+    let paths = filePath.slice(sourceDir.length + 1);
+    //console.dir(all[10]);
+    let distPath = path.resolve(enumPath, paths, fileName.slice(0, -5) + "js");
+    console.log("========distPath=========", distPath);
+    if (fs.existsSync(distPath)) {
+      fs.writeFileSync(distPath, '');
+    } else {
+      console.log("========paths=====", paths)
+      console.log("-----创建相对文件夹---", paths.split(/\\/));
+      let divide = enumPath;
+      paths.split(/\\/).forEach(p => {
+        divide = path.resolve(divide, p);
+        if (!fs.existsSync(divide)) {
+          fs2.ensureDir(divide)
+        }
+      })
+      fs2.ensureFile(distPath)
+    }
+
+    fs.appendFileSync(distPath, allDefineContent + allexport);
+    //  fs.appendFileSync(distPath, allexport);
+  }
 }

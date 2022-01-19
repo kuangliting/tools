@@ -149,12 +149,13 @@ export const RecogType={
 ,WHITELIST_ONLY:1
 ,BLACKLIST_ONLY:2
 ,NOT_RECOGNIZED:3
+,ELECTRONIC_FENCE:4
 
       };
 export const RecogTypeMap={
-        [RecogType.ANY_TYPE]:'全部',[RecogType.WHITELIST_ONLY]:'白名单',[RecogType.BLACKLIST_ONLY]:'黑名单',[RecogType.NOT_RECOGNIZED]:'陌生人'
+        [RecogType.ANY_TYPE]:'全部',[RecogType.WHITELIST_ONLY]:'白名单',[RecogType.BLACKLIST_ONLY]:'黑名单',[RecogType.NOT_RECOGNIZED]:'陌生人',[RecogType.ELECTRONIC_FENCE]:'电子围栏'
       };
 export const RecogTypeList=[
-        {label:'全部',value:RecogType.ANY_TYPE},{label:'白名单',value:RecogType.WHITELIST_ONLY},{label:'黑名单',value:RecogType.BLACKLIST_ONLY},{label:'陌生人',value:RecogType.NOT_RECOGNIZED}
+        {label:'全部',value:RecogType.ANY_TYPE},{label:'白名单',value:RecogType.WHITELIST_ONLY},{label:'黑名单',value:RecogType.BLACKLIST_ONLY},{label:'陌生人',value:RecogType.NOT_RECOGNIZED},{label:'电子围栏',value:RecogType.ELECTRONIC_FENCE}
       ];
 export default {ImgFileType,ImgFileTypeMap,ImgFileTypeList,Gender,GenderMap,GenderList,GlassType,GlassTypeMap,GlassTypeList,StaffType,StaffTypeMap,StaffTypeList,ScreenSplitType,ScreenSplitTypeMap,ScreenSplitTypeList,StreamStatus,StreamStatusMap,StreamStatusList,StaffLabelType,StaffLabelTypeMap,StaffLabelTypeList,ErrorCode,ErrorCodeMap,ErrorCodeList,RecogType,RecogTypeMap,RecogTypeList}

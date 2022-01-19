@@ -110,13 +110,14 @@ export const ElecFenceRule={
           BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA:0
 ,BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA:1
 ,BODY_DETECT_REGION_TOP_IN_MONITOR_AREA:2
+,BODY_DETECT_REGION_ALL_IN_MONITOR_AREA:3
 
       };
 export const ElecFenceRuleMap={
-        [ElecFenceRule.BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA]:'人体检测框与监控区域有重叠时告警',[ElecFenceRule.BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA]:'人体检测框底部在监控区域时告警',[ElecFenceRule.BODY_DETECT_REGION_TOP_IN_MONITOR_AREA]:'人体检测框顶部在监控区域时告警'
+        [ElecFenceRule.BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA]:'人体检测框与监控区域有重叠时告警',[ElecFenceRule.BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA]:'人体检测框底部在监控区域时告警',[ElecFenceRule.BODY_DETECT_REGION_TOP_IN_MONITOR_AREA]:'人体检测框顶部在监控区域时告警',[ElecFenceRule.BODY_DETECT_REGION_ALL_IN_MONITOR_AREA]:'人体检测框全部在监控区域时告警'
       };
 export const ElecFenceRuleList=[
-        {label:'人体检测框与监控区域有重叠时告警',value:ElecFenceRule.BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA},{label:'人体检测框底部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA},{label:'人体检测框顶部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_TOP_IN_MONITOR_AREA}
+        {label:'人体检测框与监控区域有重叠时告警',value:ElecFenceRule.BODY_DETECT_REGION_OVERLAP_WITH_MONITOR_AREA},{label:'人体检测框底部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_BOTTOM_IN_MONITOR_AREA},{label:'人体检测框顶部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_TOP_IN_MONITOR_AREA},{label:'人体检测框全部在监控区域时告警',value:ElecFenceRule.BODY_DETECT_REGION_ALL_IN_MONITOR_AREA}
       ];
 export const AlarmMode={
           ALARM_CONTINUOUS:0

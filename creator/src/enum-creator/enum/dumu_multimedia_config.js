@@ -109,16 +109,18 @@ export const StreamTypeList=[
       ];
 export const VideoResolution={
           VIDEO_RES_NONE:0
-,VIDEO_RES_2560_1440:1
-,VIDEO_RES_1920_1080:2
-,VIDEO_RES_1280_720:3
+,VIDEO_RES_4096_2160:1
+,VIDEO_RES_3840_2160:2
+,VIDEO_RES_2560_1440:3
+,VIDEO_RES_1920_1080:4
+,VIDEO_RES_1280_720:5
 
       };
 export const VideoResolutionMap={
-        [VideoResolution.VIDEO_RES_NONE]:'PLACEHOLDER',[VideoResolution.VIDEO_RES_2560_1440]:'2560*1440',[VideoResolution.VIDEO_RES_1920_1080]:'1920*1080',[VideoResolution.VIDEO_RES_1280_720]:'1280*720'
+        [VideoResolution.VIDEO_RES_NONE]:'PLACEHOLDER',[VideoResolution.VIDEO_RES_4096_2160]:'4096*2160',[VideoResolution.VIDEO_RES_3840_2160]:'3840*2160',[VideoResolution.VIDEO_RES_2560_1440]:'2560*1440',[VideoResolution.VIDEO_RES_1920_1080]:'1920*1080',[VideoResolution.VIDEO_RES_1280_720]:'1280*720'
       };
 export const VideoResolutionList=[
-        {label:'PLACEHOLDER',value:VideoResolution.VIDEO_RES_NONE},{label:'2560*1440',value:VideoResolution.VIDEO_RES_2560_1440},{label:'1920*1080',value:VideoResolution.VIDEO_RES_1920_1080},{label:'1280*720',value:VideoResolution.VIDEO_RES_1280_720}
+        {label:'PLACEHOLDER',value:VideoResolution.VIDEO_RES_NONE},{label:'4096*2160',value:VideoResolution.VIDEO_RES_4096_2160},{label:'3840*2160',value:VideoResolution.VIDEO_RES_3840_2160},{label:'2560*1440',value:VideoResolution.VIDEO_RES_2560_1440},{label:'1920*1080',value:VideoResolution.VIDEO_RES_1920_1080},{label:'1280*720',value:VideoResolution.VIDEO_RES_1280_720}
       ];
 export const VideoStreamBitRateType={
           VIDEO_STREAM_BITRATE_NONE:0

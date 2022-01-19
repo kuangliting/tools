@@ -48,7 +48,7 @@ module.exports = function creator(filePath, fileName) {
   if (fs.existsSync(distPath)) {
     fs.writeFileSync(distPath, '');
   }
-  
+
 
   all.forEach(a => {
     let name = a.name;
@@ -82,10 +82,12 @@ module.exports = function creator(filePath, fileName) {
       allexport += name + "Map,";
       allexport += name + "List,";
     }
-    
+
     //console.log(defineConst)
   })
-  allexport=allexport.slice(0,-1);
+  if (allexport.slice(-1) !== "{") {
+    allexport = allexport.slice(0, -1);
+  }
   allexport += "}";
   fs.appendFileSync(distPath, allexport);
 }

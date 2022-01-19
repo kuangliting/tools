@@ -122,10 +122,10 @@ export const UploadDataType={
 
       };
 export const UploadDataTypeMap={
-        [UploadDataType.FACE_IMAGE_HAVE_RECOG]:'有识别结果人脸图',[UploadDataType.FACE_IMAGE_NO_RECOG]:'无识别结果人脸图',[UploadDataType.ELEC_FENCE_HAVE_RECOG]:'有识别结果电子围栏抓拍图',[UploadDataType.ELEC_FENCE_NO_RECOG]:'无识别结果电子围栏抓拍图'
+        [UploadDataType.FACE_IMAGE_HAVE_RECOG]:'有识别结果人像图',[UploadDataType.FACE_IMAGE_NO_RECOG]:'无识别结果人像图',[UploadDataType.ELEC_FENCE_HAVE_RECOG]:'有识别结果电子围栏抓拍图',[UploadDataType.ELEC_FENCE_NO_RECOG]:'无识别结果电子围栏抓拍图'
       };
 export const UploadDataTypeList=[
-        {label:'有识别结果人脸图',value:UploadDataType.FACE_IMAGE_HAVE_RECOG},{label:'无识别结果人脸图',value:UploadDataType.FACE_IMAGE_NO_RECOG},{label:'有识别结果电子围栏抓拍图',value:UploadDataType.ELEC_FENCE_HAVE_RECOG},{label:'无识别结果电子围栏抓拍图',value:UploadDataType.ELEC_FENCE_NO_RECOG}
+        {label:'有识别结果人像图',value:UploadDataType.FACE_IMAGE_HAVE_RECOG},{label:'无识别结果人像图',value:UploadDataType.FACE_IMAGE_NO_RECOG},{label:'有识别结果电子围栏抓拍图',value:UploadDataType.ELEC_FENCE_HAVE_RECOG},{label:'无识别结果电子围栏抓拍图',value:UploadDataType.ELEC_FENCE_NO_RECOG}
       ];
 export const ReceiveServiceType={
           SERVICE_TYPE_HTTP:0
@@ -173,14 +173,15 @@ export const LogoTypeList=[
       ];
 export const AccessMode={
           ACCESS_MODE_STAND_ALONE:0
-,ACCESS_MODE_CHENG_FENG:1
+,ACCESS_MODE_PUBLIC_CLOUD:1
+,ACCESS_MODE_PRIVATIZATION:2
 
       };
 export const AccessModeMap={
-        [AccessMode.ACCESS_MODE_STAND_ALONE]:'单机模式',[AccessMode.ACCESS_MODE_CHENG_FENG]:'乘风平台'
+        [AccessMode.ACCESS_MODE_STAND_ALONE]:'单机模式',[AccessMode.ACCESS_MODE_PUBLIC_CLOUD]:'乘风公有云',[AccessMode.ACCESS_MODE_PRIVATIZATION]:'乘风私有化'
       };
 export const AccessModeList=[
-        {label:'单机模式',value:AccessMode.ACCESS_MODE_STAND_ALONE},{label:'乘风平台',value:AccessMode.ACCESS_MODE_CHENG_FENG}
+        {label:'单机模式',value:AccessMode.ACCESS_MODE_STAND_ALONE},{label:'乘风公有云',value:AccessMode.ACCESS_MODE_PUBLIC_CLOUD},{label:'乘风私有化',value:AccessMode.ACCESS_MODE_PRIVATIZATION}
       ];
 export const StorageStrategy={
           STORAGE_STRATEGY_FULL_COVER:0
@@ -205,4 +206,50 @@ export const DeviceInfoTypeMap={
 export const DeviceInfoTypeList=[
         {label:'设备名称',value:DeviceInfoType.DEVICE_INFO_NAME},{label:'设备存储策略',value:DeviceInfoType.DEVICE_STORAGE_STRATEGY},{label:'所有信息',value:DeviceInfoType.DEVICE_INFO_ALL}
       ];
-export default {NetworkMode,NetworkModeMap,NetworkModeList,IpProtocolVersion,IpProtocolVersionMap,IpProtocolVersionList,MeridiemFlag,MeridiemFlagMap,MeridiemFlagList,TimeFormat,TimeFormatMap,TimeFormatList,TimeZone,TimeZoneMap,TimeZoneList,NtpSwitch,NtpSwitchMap,NtpSwitchList,RebootTimeType,RebootTimeTypeMap,RebootTimeTypeList,LogExportTime,LogExportTimeMap,LogExportTimeList,UploadDataType,UploadDataTypeMap,UploadDataTypeList,ReceiveServiceType,ReceiveServiceTypeMap,ReceiveServiceTypeList,UpgradeStatus,UpgradeStatusMap,UpgradeStatusList,LogoType,LogoTypeMap,LogoTypeList,AccessMode,AccessModeMap,AccessModeList,StorageStrategy,StorageStrategyMap,StorageStrategyList,DeviceInfoType,DeviceInfoTypeMap,DeviceInfoTypeList}
+export const HttpsOperate={
+          HTTPS_OPEN:0
+,HTTPS_CLOSE:1
+,HTTPS_INSTALL:2
+
+      };
+export const HttpsOperateMap={
+        [HttpsOperate.HTTPS_OPEN]:'开启HTTPS',[HttpsOperate.HTTPS_CLOSE]:'关闭HTTPS',[HttpsOperate.HTTPS_INSTALL]:'安装HTTPS证书'
+      };
+export const HttpsOperateList=[
+        {label:'开启HTTPS',value:HttpsOperate.HTTPS_OPEN},{label:'关闭HTTPS',value:HttpsOperate.HTTPS_CLOSE},{label:'安装HTTPS证书',value:HttpsOperate.HTTPS_INSTALL}
+      ];
+export const Gat1400UploadDataType={
+          FACE_IMAGE:0
+,BODY_IMAGE:1
+
+      };
+export const Gat1400UploadDataTypeMap={
+        [Gat1400UploadDataType.FACE_IMAGE]:'人脸',[Gat1400UploadDataType.BODY_IMAGE]:'人体'
+      };
+export const Gat1400UploadDataTypeList=[
+        {label:'人脸',value:Gat1400UploadDataType.FACE_IMAGE},{label:'人体',value:Gat1400UploadDataType.BODY_IMAGE}
+      ];
+export const Gat1400RegisterStatus={
+          GAT1400_REGISTER_NONE:0
+,GAT1400_REGISTER_OK:1
+,GAT1400_REGISTER_RUN:2
+
+      };
+export const Gat1400RegisterStatusMap={
+        [Gat1400RegisterStatus.GAT1400_REGISTER_NONE]:'未注册',[Gat1400RegisterStatus.GAT1400_REGISTER_OK]:'已注册',[Gat1400RegisterStatus.GAT1400_REGISTER_RUN]:'注册中'
+      };
+export const Gat1400RegisterStatusList=[
+        {label:'未注册',value:Gat1400RegisterStatus.GAT1400_REGISTER_NONE},{label:'已注册',value:Gat1400RegisterStatus.GAT1400_REGISTER_OK},{label:'注册中',value:Gat1400RegisterStatus.GAT1400_REGISTER_RUN}
+      ];
+export const Gat1400Operate={
+          GAT1400_ENABLE:0
+,GAT1400_EDIT:1
+
+      };
+export const Gat1400OperateMap={
+        [Gat1400Operate.GAT1400_ENABLE]:'使能GAT1400接入',[Gat1400Operate.GAT1400_EDIT]:'编辑GAT1400接入'
+      };
+export const Gat1400OperateList=[
+        {label:'使能GAT1400接入',value:Gat1400Operate.GAT1400_ENABLE},{label:'编辑GAT1400接入',value:Gat1400Operate.GAT1400_EDIT}
+      ];
+export default {NetworkMode,NetworkModeMap,NetworkModeList,IpProtocolVersion,IpProtocolVersionMap,IpProtocolVersionList,MeridiemFlag,MeridiemFlagMap,MeridiemFlagList,TimeFormat,TimeFormatMap,TimeFormatList,TimeZone,TimeZoneMap,TimeZoneList,NtpSwitch,NtpSwitchMap,NtpSwitchList,RebootTimeType,RebootTimeTypeMap,RebootTimeTypeList,LogExportTime,LogExportTimeMap,LogExportTimeList,UploadDataType,UploadDataTypeMap,UploadDataTypeList,ReceiveServiceType,ReceiveServiceTypeMap,ReceiveServiceTypeList,UpgradeStatus,UpgradeStatusMap,UpgradeStatusList,LogoType,LogoTypeMap,LogoTypeList,AccessMode,AccessModeMap,AccessModeList,StorageStrategy,StorageStrategyMap,StorageStrategyList,DeviceInfoType,DeviceInfoTypeMap,DeviceInfoTypeList,HttpsOperate,HttpsOperateMap,HttpsOperateList,Gat1400UploadDataType,Gat1400UploadDataTypeMap,Gat1400UploadDataTypeList,Gat1400RegisterStatus,Gat1400RegisterStatusMap,Gat1400RegisterStatusList,Gat1400Operate,Gat1400OperateMap,Gat1400OperateList}
