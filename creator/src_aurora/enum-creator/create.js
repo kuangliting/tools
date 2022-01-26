@@ -55,8 +55,6 @@ module.exports = function creator(filePath, fileName) {
     console.log(all);
   }
 
-
-
   let allDefineContent = '';
   all.forEach(a => {
     let name = a.name;

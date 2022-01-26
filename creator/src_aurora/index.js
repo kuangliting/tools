@@ -8,179 +8,176 @@ const {
 } = entryConfig;
 const baseUrl = path.resolve(sourceDir);
 let config = {
-  distDir:path.resolve(__dirname, './dist'),
+  distDir: path.resolve(__dirname, './dist'),
   distFile: path.resolve(__dirname, './dist/action.js'),
   entry: {
-    action: {
-      index: path.resolve(sourceDir, './action/action.proto'),
-    },
+    modules: path.resolve(sourceDir, './modules'),
   },
 }
 
-function run(index, distUrl) {
-  let buildMap = {};
-  let globalObj = {};
-  let parentMap = {};
-  if (fs.existsSync(distUrl)) {
-    fs.writeFileSync(distUrl, '')
-  }  
+// /\*\*((\n)(.+))+\*/
+class ProtoToJsBuilder {
+  constructor(modules) {
+    this.modules = modules;
+    modules.forEach(m => {
+      this.dirCreator(m);
+    })
+  }
+  dirCreator(entryPath) {
+    let code = ""
+    let files = fs.readdirSync(entryPath);
+    let distFileName = entryPath.slice(entryPath.lastIndexOf("\\") + 1) + ".js";
+    let distPath = path.resolve(__dirname, "dist", distFileName);
+    //console.log(distPath, distFileName)
 
-  const originalType = ['uint32', 'int32', 'float', 'string', 'bool'];
-
-  // function url2name(url) {
-  //   url = url.slice(0, url.indexOf("."));
-  //   return url.replace(/\/([a-z])/g, function (a, b) {
-  //     return b.toUpperCase();
-  //   })
-  // }
-
-  function build(url) {
-    if (buildMap[url]) {
+    files.forEach((item) => {
+      let fullItem = path.resolve(entryPath, item)
+      if (fs.statSync(fullItem).isDirectory()) {
+        this.dirCreator(fullItem)
+      } else {
+        code = code + this.parseProto(entryPath, item);
+      }
+      //console.log(fs.statSync(item).isDirectory())
+    });
+    //console.log(code);
+    //return
+    fs2.ensureFileSync(distPath);
+    fs.appendFileSync(distPath, code);
+  }
+  parseProto(dir, item) {
+    if (this.sum > 2) {
       return;
-      //return buildMap[url];
     }
-    let result = '';
-    // if (dumuulist.indexOf(url) !== -1) {
-    //   result = fs.readFileSync(path.resolve(dumuUrl, url), {
-    //     encoding: 'utf-8'
-    //   });
-    // } else {
-    // }
-    result = fs.readFileSync(path.resolve(baseUrl, url), {
+    this.sum++;
+    let fileStr = fs.readFileSync(path.resolve(dir, item), {
       encoding: 'utf-8'
     });
-
-    result = result.replace(/option .*/g, "");
-    let importFiles = [];
-
-    result = result.replace(/import "(.*)";/g, function (a, b) {
-      importFiles.push(b);
-      return ""
-    });
-
-    // let opeofExp = /oneof (\w*)\s\{([\n\s\S]*?)\}/g;
-    // let repeatExp = /repeat (\w*)\s\{([\n\s\S]*?)\}/g;
-    // let enumExp = /enum (\w*)\s\{([\n\s\S]*?)\}/g;
-    //console.log(result);
-
-    var CommentPatt = /\/\*\*[.\S\s\n]+?\*\//mg;
-
-    result = result.replace(CommentPatt, function (a, b, c) {
-      return "";
-    })
-
-    result = result.replace(/oneof\s+action\s+\{([\n\s\S]*?)\}/g, function (a, b, c) {
-      return b;
-    })
-
-    //console.log(result);
-    const innerRexp = /\{([\n\s]*?enum.+\{[\n\s\S]*?\})/g;
-    result = result.replace(innerRexp, function (a, b, c) {
-      return "";
-    })
-    // var patt = /(.+)\n?/mg;
-    // var r = "";
-    // let count = 0;
-
-    result.replace(/message (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
-      let obj = {
-        name: b.trim(),
-        list: [],
-        hasDesc: false,
-      }
-      let messageName = b.trim();
-      if (!parentMap[messageName]) {
-        parentMap[messageName] = [];
-      }
-
-      let propObj = {
-        __parentType: parentMap[messageName],
-      };
-      c = c.trim()
-
-      c.trim().split('\n').forEach(line => {
-        if (!line.trim()) {
-          return;
-        }
-        let items = line.split(";");
-        let v_k = items[0].split(" = ");
-        let key = v_k[0].trim();
-        if (key.indexOf("//") == -1) {
-          let value = v_k[1];
-          let desc = "";
-          if (items.length > 1) {
-            obj.hasDesc = true;
-            desc = items[1].replace("//", "").trim();
-          }
-          if (value === '0' && desc === '未定义') {
-            desc = "全部"
-          }
-          let first = key.split(" ");
-          let type = first[0].trim();
-
-          if (originalType.indexOf(type) === -1) {
-            if (parentMap[type]) {
-              parentMap[type].push(messageName)
-            } else {
-              parentMap[type] = [messageName]
-            }
-          }
-          if (messageName === 'Rectf') {
-            console.log(type, first);
-          }
-          let propName = first[1] ? first[1].trim() : "";
-          if (type === 'repeated') {
-            type = propName;
-            propName = first[2] ? first[2].trim() : "";
-            propObj[propName] = {
-              type,
-              desc,
-              isArray: true
-            }
-          } else {
-            propObj[propName] = {
-              type,
-              desc,
-              isArray: false
-            }
-          }
-        }
-      })
-      if (globalObj[messageName]) {
-        console.log("repeat", messageName);
-      }
-      globalObj[messageName] = propObj;
-      if (messageName === 'Rectf') {
-        console.log(propObj);
-      }
-    })
-
-    importFiles.forEach(m => {
-      build(m);
-    });
-    buildMap[url] = true;
+    fileStr = this.removeAnnotation(fileStr);
+    return this.parseContent(fileStr)
+    //console.log(fileStr)
   }
-  build(index);
-  //console.log("Object.keys(globalObj).length===sumMessage", Object.keys(globalObj).length, sumMessage);
-  let bf = `export default `
-  fs.appendFileSync(distUrl, bf + JSON.stringify(globalObj) + ";");
-  //return build;
+  removeAnnotation(fstr) {
+    let annotationExp = /\/\*\*(\n|.|\r)+?\*\//gm
+    return fstr.replace(annotationExp, function () {
+      //console.log("0000000000000000000");
+      return ""
+    })
+  }
+  parseEnum(fstr) {
+    let enumExp = /enum\s+(\w+)\s*\{([\n\s\S]*?)\}/g;
+    let enumlist = [];
+    fstr = fstr.replace(enumExp, function (a, b, c) {
+      let name = b.trim();
+      enumlist.push(name);
+      return "";
+    })
+  }
+  parseFBig(str) {
+    return str.replace(/(^|_)([a-z])/g, (a, b, c) => {
+      return c.toUpperCase()
+    });
+  }
+  parseBig(str) {
+    return str.replace(/(_)([a-z])/g, (a, b, c) => {
+      return c.toUpperCase()
+    });
+  }
+  getResultCode(messageName, c) {
+    let propList = [];
+    c.trim().split('\n').forEach(line => {
+      if (!line.trim()) {
+        return;
+      }
+      let items = line.split(";");
+      let v_k = items[0].split(" = ");
+      let key = v_k[0].trim();
+      if (key.indexOf("//") == -1) {
+        let value = v_k[1];
+        let desc = "";
+        if (items.length > 1) {
+          desc = items[1].replace("//", "").trim();
+        }
+
+        let first = key.split(" ");
+        let type = first[0].trim();
+
+        let propName = first[1] ? first[1].trim() : "";
+        if (type === 'repeated') {
+          type = propName;
+          propName = first[2] ? first[2].trim() : "";
+        }
+        propList.push(propName);
+      }
+    })
+    let inner = "";
+    //console.log(propList);
+    propList.forEach(p => {
+      //console.log(inner);
+      if (p === 'result' || p === '') {
+        return
+      }
+      let str = `const ${this.parseBig(p)} = data.${this.parseBig(p)};`;
+      //console.log(str);
+      inner = inner + str + "\n";
+      //inner = str+"\n";
+    })
+    console.log(inner);
+    messageName = messageName.replace(/^([A-Z])/, function (a, b) {
+      return b.toLowerCase(); //toLowerCase
+    })
+
+    return `
+    {
+    ${messageName}:{
+      success : data=>{
+        ${inner}
+      },
+      popSuccess:true,
+      popFail:true,
+    }
+  }`
+  }
+  getMsgCode(messageName, c) {
+    let str = `const ${messageName} = new $Proto.${messageName}();\n`;
+    c = c.trim()
+    c.trim().split('\n').forEach(line => {
+      if (!line.trim()) {
+        return;
+      }
+      let items = line.split(";");
+      let v_k = items[0].split(" = ");
+      let key = v_k[0].trim();
+      if (key.indexOf("//") == -1) {
+        let first = key.split(" ");
+        let type = first[0].trim();
+
+        let propName = first[1] ? first[1].trim() : "";
+        if (type === 'repeated') {
+          type = propName;
+          propName = first[2] ? first[2].trim() : "";
+          str = str + `${messageName}.set${this.parseFBig(propName)}List();\n`
+        } else {
+          str = str + `${messageName}.set${this.parseFBig(propName)}();\n`
+        }
+      }
+    })
+    str = str + `this.$actionSend("set${this.parseFBig(messageName)}",${messageName})\n`;
+    return str;
+  }
+  parseContent(fstr) {
+    let str = "";
+    let enumExp = /message (\w*)\s\{([\n\s\S]*?)\}/g;
+    fstr.replace(enumExp, (a, b, c) => {
+      let messageName = b.trim();
+      if (messageName.indexOf('Result') !== -1) {
+        str = str + this.getResultCode(messageName.slice(0, -6), c) + "\n\n";
+      } else {
+        str = str + this.getMsgCode(messageName, c) + "\n";
+      }
+      return "";
+    })
+    return str;
+  }
 }
 
- 
-
-if (!fs.existsSync(config.distDir)) {
-  fs.mkdirSync(config.distDir)
-}
-Object.keys(config.entry).forEach(d => {
- let obj = config.entry[d];
- // let dist = `${config.dist}/${d}.js`;
-  run(obj.index, config.distFile);
-})
-
-fs2.copySync(config.distFile,path.resolve(__dirname,distProtoDir,"action.js"));
-
-
-
-
- 
+new ProtoToJsBuilder([path.resolve(sourceDir, './modules/pacm'), path.resolve(sourceDir, './modules/dwh')]);

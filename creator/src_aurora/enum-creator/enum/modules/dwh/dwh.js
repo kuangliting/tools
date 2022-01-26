@@ -1,16 +1,21 @@
-export const SkillType = {
-      BASIC: 0,
-      BUSINESS: 1
+export const RecordType = {
+      ALARM: 0,
+      RECORD: 1
 
 };
-export const SkillTypeMap = {
-
+export const RecordTypeMap = {
+      [RecordType.ALARM]: '表示事件中心',
+      [RecordType.RECORD]: '表示记录中心'
 };
-export const SkillTypeList = [
-
-];
+export const RecordTypeList = [{
+      label: '表示事件中心',
+      value: RecordType.ALARM
+}, {
+      label: '表示记录中心',
+      value: RecordType.RECORD
+}];
 export default {
-      SkillType,
-      SkillTypeMap,
-      SkillTypeList
+      RecordType,
+      RecordTypeMap,
+      RecordTypeList
 }
