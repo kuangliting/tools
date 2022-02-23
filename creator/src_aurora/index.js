@@ -19,7 +19,9 @@ let config = {
 class ProtoToJsBuilder {
   constructor(modules) {
     this.modules = modules;
+
     modules.forEach(m => {
+
       this.dirCreator(m);
     })
   }
@@ -30,19 +32,27 @@ class ProtoToJsBuilder {
     let distPath = path.resolve(__dirname, "dist", distFileName);
     //console.log(distPath, distFileName)
 
+    let r = "";
+    let c = "";
     files.forEach((item) => {
       let fullItem = path.resolve(entryPath, item)
       if (fs.statSync(fullItem).isDirectory()) {
         this.dirCreator(fullItem)
       } else {
-        code = code + this.parseProto(entryPath, item);
+        const {
+          rStr,
+          codeStr
+        } = this.parseProto(entryPath, item);
+        r = r + rStr;
+        c = c + codeStr;
       }
       //console.log(fs.statSync(item).isDirectory())
     });
-    //console.log(code);
-    //return
     fs2.ensureFileSync(distPath);
-    fs.appendFileSync(distPath, code);
+    fs.writeFileSync(distPath, "");
+    fs.appendFileSync(distPath, c + `return {
+      ${r}
+    }`);
   }
   parseProto(dir, item) {
     if (this.sum > 2) {
@@ -127,15 +137,13 @@ class ProtoToJsBuilder {
     })
 
     return `
-    {
     ${messageName}:{
       success : data=>{
         ${inner}
       },
       popSuccess:true,
       popFail:true,
-    }
-  }`
+    },`
   }
   getMsgCode(messageName, c) {
     let str = `const ${messageName} = new $Proto.${messageName}();\n`;
@@ -165,19 +173,27 @@ class ProtoToJsBuilder {
     return str;
   }
   parseContent(fstr) {
-    let str = "";
+    let codeStr = "";
+    let rStr = "";
     let enumExp = /message (\w*)\s\{([\n\s\S]*?)\}/g;
     fstr.replace(enumExp, (a, b, c) => {
       let messageName = b.trim();
       if (messageName.indexOf('Result') !== -1) {
-        str = str + this.getResultCode(messageName.slice(0, -6), c) + "\n\n";
+        rStr = rStr + this.getResultCode(messageName.slice(0, -6), c) + "";
       } else {
-        str = str + this.getMsgCode(messageName, c) + "\n";
+        codeStr = codeStr + this.getMsgCode(messageName, c) + "\n";
       }
       return "";
     })
-    return str;
+    return {
+      codeStr,
+      rStr
+    };
   }
 }
 
-new ProtoToJsBuilder([path.resolve(sourceDir, './modules/pacm'), path.resolve(sourceDir, './modules/dwh')]);
+new ProtoToJsBuilder([
+path.resolve(sourceDir, './modules/pacm'), 
+path.resolve(sourceDir, './modules/dwh'), 
+path.resolve(sourceDir, './ai'),
+path.resolve(sourceDir, './modules/vp')]);
