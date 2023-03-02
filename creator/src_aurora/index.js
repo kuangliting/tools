@@ -193,7 +193,16 @@ class ProtoToJsBuilder {
 }
 
 new ProtoToJsBuilder([
-path.resolve(sourceDir, './modules/pacm'), 
-path.resolve(sourceDir, './modules/dwh'), 
-path.resolve(sourceDir, './ai'),
-path.resolve(sourceDir, './modules/vp')]);
+// path.resolve(sourceDir, './modules/pacm'), 
+// path.resolve(sourceDir, './modules/dwh'), 
+// path.resolve(sourceDir, './ai'),
+// path.resolve(sourceDir, './modules/vp'),
+// path.resolve(sourceDir, './modules/network'),
+// path.resolve(sourceDir, './modules/dm'),
+// path.resolve(sourceDir, './modules/sc'),
+// path.resolve(sourceDir, './modules/thirdplatform'),
+// path.resolve(sourceDir, './modules/dkm'),
+// path.resolve(sourceDir, './modules/tm'),
+// path.resolve(sourceDir, './modules/account'),
+path.resolve(sourceDir, './modules/dc'),
+]);

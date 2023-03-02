@@ -1,7 +1,7 @@
 let Path = require("path");
 let distDir = 'C:/code/baidu/personal-code/aurora_web';
 module.exports = {
-    sourceDir: "C:/code/baidu/AIPD/edgeflow/proto",
+    sourceDir: "C:/code/baidu/AIPD/proto",
     webProtoFile: "./build_js/webproto.js",
     sourceFiles: [{
         dir: "./ai",

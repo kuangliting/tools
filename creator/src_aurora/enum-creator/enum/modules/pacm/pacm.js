@@ -1,11 +1,12 @@
 export const InstallState={
           CREATING:0
-,DOWNLOADING:1
-,EXTRACTING:2
-,INSTALLING:3
-,INSTALLED:4
-,CANCELLED:5
-,FAILED:6
+,VERIFY:1
+,UNEXTRACT:2
+,EXTRACTED:3
+,INSTALLING:4
+,INSTALLED:5
+,CANCELLED:6
+,FAILED:7
 
       };
 export const InstallStateMap={
@@ -22,10 +23,10 @@ export const ActivateState={
 
       };
 export const ActivateStateMap={
-        [ActivateState.ACTIVATESTATE_ALL]:'全部',[ActivateState.UNACTIVATED]:'已安装，未激活',[ActivateState.ACTIVATED]:'已安装，已激活',[ActivateState.EXPIRED]:'已安装，已过期'
+        [ActivateState.ACTIVATESTATE_ALL]:'全部',[ActivateState.UNACTIVATED]:'未激活',[ActivateState.ACTIVATED]:'已激活',[ActivateState.EXPIRED]:'已过期'
       };
 export const ActivateStateList=[
-        {label:'全部',value:ActivateState.ACTIVATESTATE_ALL},{label:'已安装，未激活',value:ActivateState.UNACTIVATED},{label:'已安装，已激活',value:ActivateState.ACTIVATED},{label:'已安装，已过期',value:ActivateState.EXPIRED}
+        {label:'全部',value:ActivateState.ACTIVATESTATE_ALL},{label:'未激活',value:ActivateState.UNACTIVATED},{label:'已激活',value:ActivateState.ACTIVATED},{label:'已过期',value:ActivateState.EXPIRED}
       ];
 export const ConfigState={
           CONFIGSTATE_ALL:0

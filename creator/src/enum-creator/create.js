@@ -10,6 +10,9 @@ module.exports = function creator(filePath, fileName) {
   let n = 0;
   let allexport = "export default {"
   result.replace(/enum (\w*)\s\{([\n\s\S]*?)\}/g, function (a, b, c) {
+    if(b.trim().search(/ResultCode$/)!==-1){
+      return;
+    }
     let obj = {
       name: b.trim(),
       list: [],

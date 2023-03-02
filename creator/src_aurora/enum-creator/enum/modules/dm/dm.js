@@ -58,4 +58,15 @@ export const ChannelTypeMap={
 export const ChannelTypeList=[
         {label:'所有通道',value:ChannelType.ALL_CHANEL},{label:'被占用通道',value:ChannelType.OCCUPIED_CHANNEL},{label:'空闲通道',value:ChannelType.IDLE_CHANNEL}
       ];
-export default {DeviceWorkStatus,DeviceWorkStatusMap,DeviceWorkStatusList,DeviceServiceMode,DeviceServiceModeMap,DeviceServiceModeList,DeviceAccessProtocol,DeviceAccessProtocolMap,DeviceAccessProtocolList,TransportProtocol,TransportProtocolMap,TransportProtocolList,ChannelType,ChannelTypeMap,ChannelTypeList}
+export const DeviceType={
+          DEVICE_IPC:0
+,DEVICE_FILE:1
+
+      };
+export const DeviceTypeMap={
+        [DeviceType.DEVICE_IPC]:'网络摄像头',[DeviceType.DEVICE_FILE]:'视频文件'
+      };
+export const DeviceTypeList=[
+        {label:'网络摄像头',value:DeviceType.DEVICE_IPC},{label:'视频文件',value:DeviceType.DEVICE_FILE}
+      ];
+export default {DeviceWorkStatus,DeviceWorkStatusMap,DeviceWorkStatusList,DeviceServiceMode,DeviceServiceModeMap,DeviceServiceModeList,DeviceAccessProtocol,DeviceAccessProtocolMap,DeviceAccessProtocolList,TransportProtocol,TransportProtocolMap,TransportProtocolList,ChannelType,ChannelTypeMap,ChannelTypeList,DeviceType,DeviceTypeMap,DeviceTypeList}
